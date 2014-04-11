@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.OfficeApp" DefaultFile="Wikipedia_dev.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="AppPackage" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Wikipedia_dev.xml" Target="Wikipedia_dev.xml\" Type="AppPackage" />
+  </Files>
+  <ExtensionData>
+    <ExtensionDataItem Key="OfficeAppManifestRelativePath" Value="Wikipedia_dev.xml\Wikipedia_dev.xml" />
+    <ExtensionDataItem Key="OfficeAppStartPageRelativePath" Value="Wikipedia_dev.html" />
+  </ExtensionData>
+</ProjectItem>

@@ -1,0 +1,741 @@
+﻿/* **************************************************************************************
+Copyright (c), Microsoft Open Technologies, Inc.
+All rights reserved.
+
+Except for the third party material listed below, this code is licensed to you under the BSD 2-Clause License.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Third Party Notices
+
+This code incorporates trademarks and logos of the Wikimedia Foundation (the "Wikimedia Marks").  The Wikimedia Marks are used by Microsoft with permission from the Wikimedia Foundation.  You must obtain permission from the Wikimedia Foundation if you wish to use the Wikimedia Marks.
+
+***************************************************************************************** */
+
+a {
+    text-decoration: none;
+}
+
+/* Takes care of making the scroll bar look nice */
+body {  
+    padding: 0;
+    padding-left: 5px;
+    margin: 0;
+    font-size:12px;
+    line-height:1.4em;
+}
+
+a:hover {
+    cursor:pointer;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+}
+
+.ms_osf_clickable {
+    cursor: pointer;
+    color: #444;
+}
+
+.ms_osf_clickable:hover {
+    cursor: pointer;
+    color: #444;
+}
+
+.ms_osf_visible {
+    visibility: visible;
+}
+
+.ms_osf_invisible {
+    visibility: hidden;
+}
+
+#ms_osf_logoArea {
+    width: 100%;
+    height: 70px;
+    text-align:center;
+}
+
+#ms_osf_logo {
+    margin-top:20px;
+}
+
+/* The entire nav bar. Holds the back button, the search bar/buttons/etc */
+#ms_osf_navBar {
+    position:absolute;
+    left:0;
+    top:70px;
+    right:0;
+    height:50px;
+}
+
+/* All the CSS for the back button */
+#ms_osf_backbutton {
+    position: absolute; 
+    left: 10px;
+    right: auto; 
+    width: 25px;
+    height: 25px; 
+    overflow: hidden; 
+    padding:0 0 0 0px;
+    margin-top: 3px;
+    display:none;
+}
+
+/* Holds the search box and the search buttons */
+#ms_osf_navContainer {
+    position: fixed; 
+    top: 70px;
+    right:15px;
+    height:26px;
+    bottom: 0;
+    overflow: hidden; 
+    padding:0 10px 0 0;
+    border: 1px solid #cccccc;
+}
+
+.ms_osf_showBackButton {
+    left:40px;
+}
+
+.ms_osf_hideBackButton {
+    left:10px;
+}
+
+#ms_osf_searchBarInputWrapper {
+    position: fixed;
+    right:59px;
+    height:24px;
+}
+
+/* Where the user types their search query */
+#ms_osf_searchBarInput {
+    border:none;
+    width:98%;
+    height:18px;
+    margin-left:2px;
+    margin-right:10px;
+    color: #777777;
+}
+
+.ms_osf_searchBarInputHint {
+    color: #A6A6A6;
+}
+
+/* Holds both the search and option buttons */
+#ms_osf_searchNavButtons {
+    position:fixed;
+    right:16px;
+    width: 42px; 
+    height: 26px;
+    float:left;
+}
+
+/* Common to both the search and options buttons */
+.ms_osf_navButton {
+    margin-top: 4px;
+    width: 20px;
+    height: 20px; 
+    margin-left: 1px;
+}
+
+#ms_osf_searchButton {
+    float:left;
+}
+
+#ms_osf_searchOptionsButton {
+    float: left;
+    margin-right: 0;
+}
+
+#ms_osf_searchOptions {
+    display:none;
+    padding: 0 0 0 0;
+    background-color: #fff;
+    position:absolute;
+    left:auto;
+    top:97px;
+    right: 15px;
+    width: 148px;
+    height:96px;
+    overflow:hidden;
+    z-index:100;
+    border: 1px solid #cccccc;
+    box-shadow:0 2px 7px #909090;   /* Opera or ie9 */
+}
+
+#ms_osf_autosearch {
+    width:100%;
+    height:48px;
+}
+
+#ms_osf_autosearch:hover {
+    background-color:#eeeeee;
+}
+
+#ms_osf_autosearchCheckbox {
+    position: fixed; 
+    left: auto;
+    right: 137px; 
+    width: 16px;
+    height: 16px;
+    overflow: hidden; 
+    padding:0 0 0 0px;
+    margin-top: 16px;
+}
+
+#ms_osf_autosearchString {
+    position: fixed;
+    margin-left: 36px;
+    margin-top: 16px;
+    font:12px Segoe UI, R;
+    color:#767676;
+}
+
+#ms_osf_searchInBrowser {
+    width:100%;
+    height:48px;
+}
+
+#ms_osf_searchInBrowser:hover{
+    background-color:#eeeeee;
+}
+
+#ms_osf_searchInBrowserButton {
+    position: fixed;
+    margin-left: 36px;
+    margin-top: 16px;
+    font:12px Segoe UI, R;
+    color:#767676;
+}
+
+/* Prettifies "No results found!" messages in the suggested article view. */
+#ms_osf_suggestionMessage {
+    font-size: 16px;
+    font-weight:600;
+    display:none;
+    margin-top: 50px;
+    padding-bottom: 15px;
+    color: #444;
+}
+
+.ms_osf_actions_hide {
+    display:none;
+}
+
+.ms_osf_actions_show {
+    display:table;
+}
+
+#ms_osf_bottomBar {
+    position:fixed;
+    bottom: 0px;
+    left:0;
+    width: 100%;
+    border-top: 1px #cccccc solid;
+    background-color:white;
+    font-size: large;
+    height: 30px;
+    text-align: center;
+    background-color: lightgrey;
+}
+
+.ms_osf_floatRight {
+    float:right;
+}
+
+#ms_osf_loadingOverlay {
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:110px;
+    left:0px;
+    background:white;
+    z-index:99;
+}
+
+#ms_osf_loadingAnimation {
+    z-index:100;
+    position: relative;
+    top:30%;
+    text-align: center;
+    height: 45px;
+    background-image: url("../images/loading.gif");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.ms_osf_loading {
+    display:none;
+}
+
+#ms_osf_aboutPane {
+    position:fixed;
+    bottom: 0px;
+    left:0px;
+    width:96%;
+    height: auto;
+    background-color:gray;
+    color:white;
+    font:12px Segoe UI,R;
+    padding: 10px;
+    display:none;
+}
+
+#ms_osf_errorPane {
+    position:fixed;
+    bottom: 0px;
+    left:0px;
+    width:100%;
+    max-height:100%;
+    background-color:gray;
+    display:none;
+}
+#ms_osf_errorHeadering {
+    height:33px;
+}
+
+#ms_osf_errorHeader {
+    color:#fff;
+    font:18px Segoe UI,Light;
+    float:left;
+    margin:7px 0 5px 10px;
+}
+
+#ms_osf_errorExit {
+    float:right;
+    height:18px;
+    width:18px;
+    margin:10px 10px 5px 0;
+}
+
+#ms_osf_errorMessage {
+    color:#fff;
+    font:12px Segoe UI,R;
+    margin:5px 0 15px 10px;
+}
+
+/* The expand/collapse article button */
+#ms_osf_articleToggle {
+    text-transform: uppercase;
+    font-weight: 600;
+    display:inline;
+    color:#464646;
+    font-size:11px;
+    width:100%;
+    border-bottom:1px solid #cccccc;
+    margin-top:-20px;
+}
+
+
+#ms_osf_articleToggle:hover {
+    color: #808080;
+}
+
+#ms_osf_backToMain {
+    text-transform: uppercase;
+    font-weight: 600;
+    display:inline;
+    color:#464646;
+    font-size:11px;
+    width:100%;
+    border-bottom:1px solid #cccccc;
+    margin-top:-20px;
+}
+
+#ms_osf_backToMain:hover {
+    color: #808080;
+}
+
+.ms_osf_tocItem {
+    text-align: left;
+    width: 100%;
+    color: #767676;
+    font-size: 22px;
+    padding-top: 10px;
+    padding-bottom:8px;
+    text-transform: none;
+    font-weight:300;
+    line-height:1.1em;
+}
+
+.ms_osf_tocItem:hover {
+    color:#262626;
+}
+
+.ms_osf_categoryMember {
+    /* TODO: make category list look pretty */
+}
+
+/* Superclass for all search results. titles are overwritten by ms_osf_searchTitle. */
+.ms_osf_searchResult {
+    margin-top: 15px;
+    padding-right: 5px;
+    font-weight: 400;
+    color: #808080;
+}
+
+/* Affects suggested articles titles */
+.ms_osf_searchTitle {
+    font-size:16px;
+    font-weight: 600;
+    width:100%;
+    padding-bottom: 3px;
+    color: #444;
+}
+
+/* Suggested article's title's hover state */
+.ms_osf_searchTitle:hover {
+     background-color: #eeeeee;
+}
+
+/* The box where all the article content goes */
+#ms_osf_content {
+    position:absolute;
+    left:0;
+    top:165px;
+    overflow-y: auto;
+    overflow-x: auto;
+    right:0;
+    bottom:auto;
+    word-wrap: break-word;
+    text-align: justify;
+    text-align-last: left;
+    padding:0;
+    color:#363636;
+}
+
+#ms_osf_article {
+    margin-right: 15px;
+    margin-left:10px;
+    margin-bottom:50px;
+}
+
+.ms_osf_content_up {
+    margin-top: -50px;
+}
+
+.ms_osf_content_down {
+    margin-top: 0px;
+}
+
+#ms_osf_mainPageHint {
+    margin: 0 5% 0 5%;
+    color:#767676;
+    font:12px Segoe UI, R;
+    text-align:left;
+}
+
+.ms_osf_fishbowl {
+    position:fixed;
+    top : 50%;
+    right:20%;
+    left:20%;
+    color:#767676;
+    font:12px Segoe UI, R;
+    text-align:center;
+}
+
+/* Pictures in the article */
+#ms_osf_article img.img_table{
+    width:100%;
+    height:100%;
+}
+
+#ms_osf_article p {
+    margin-bottom:10px;
+}
+
+
+#ms_osf_article ol {
+    padding:0; 
+    padding-left:16px;
+}
+
+#ms_osf_article li {
+    margin-bottom:16px;
+}
+
+
+/* Affects the expand/collapse table button */
+.ms_osf_tableToggle {
+    background-color: #eeeeee;
+    color:#444;
+    margin-top: 20px;
+    margin-bottom:20px;
+    padding: 3px;
+    padding-left: 22px;
+    text-align: left;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/* Gives the expand button its icon */
+.ms_osf_tableToggle_expand {
+    background-image: url("../images/expandtable.png");
+}
+
+/* Gives the collapse button its icon */
+.ms_osf_tableToggle_collapse {
+    background-image: url("../images/collapsetable.png");
+}
+
+.ms_osf_imgOnHover {
+}
+
+.image:hover {
+    cursor:default;
+}
+
+/* Styles the black insert image bar */
+.ms_osf_insertButton {
+    height: 30px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.65); /* #000000 with 60% opacity */
+    left:auto;
+    right:auto;
+}
+
+/* Styles the insert image bar icon */
+.ms_osf_insertButton_icon {
+    width:25px;
+    height:25px;	
+    margin:0 auto;
+    padding: 3px 0 0 3px;
+}
+
+.ms_osf_insertImageLoading {
+    position:absolute;
+    background-color: rgba(240,240,240,0.8);
+    background-image:url("../images/loading.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.ms_osf_headerTitle {
+    font-size:20px;
+    padding: 5px 0px 5px 0px;
+    width: 100%;
+}
+
+.ms_osf_headerTitle:hover {
+    background-color: #eeeeee;
+}
+
+.ms_osf_imageContainer {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10px;
+    padding:0;
+}
+
+.ms_osf_imageInsertArea {
+    text-align:center;
+    overflow:hidden;
+}
+
+.ms_osf_imageInsertArea:hover {
+    box-shadow:0 0 0 2px #cccccc;
+}
+
+#ms_osf_fullImage {
+    overflow: auto;
+    max-width: 270px;
+    max-height: 600px;
+}
+
+#ms_osf_fullImage img {
+    max-width: 600px;
+}
+
+.ms_osf_actions_menuItem {
+    color: #444;
+    text-decoration: none;
+}
+
+/* The little text insertion button that shows up when you highlight text */
+#textInsert {
+    display: none;
+    position:absolute;
+    width: 25px;
+    height: 25px;
+    z-index:10; /* Just needs to be higher than everything else */
+}
+
+/* Sandbox iframe */
+#ms_osf_sandbox {
+    visibility:hidden;
+    position: absolute;
+    top: 10000px;
+}
+
+/* Wikipedia's class for article captions */
+.thumbcaption {
+    font-weight: 400;
+    vertical-align: top;
+    padding-bottom: 5px;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+h2 {
+    text-align: left;
+    font-size: 18px;
+}
+
+/* Section titles */
+.mw-headline {
+    font-weight: 600;
+    text-align: left;
+}
+
+
+/* The thumbnails for images are weird. All images are in a .thumb div, and 
+    then some are in .tleft and .tright. Thumbinner contains the images for
+    tags and thumbcaption has the caption. The following CSS unifies the 
+    behavior and puts the images/thumbnails in a box so that it doesn't 
+    look out of place */
+.thumb {
+    border: 1px solid #A6A6A6;
+    text-align: center;
+    padding-top: 5px;
+    width:100%;
+    height:100%;
+}
+
+.thumb img {
+    width:100%;
+    height:100%;
+}
+
+.tleft {
+    margin: 0px auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.tright {
+    margin: 0px auto;
+    padding: 5px;
+    text-align: center;
+    float:none;
+}
+
+.thumbinner {
+    display:inline;
+    margin:auto;
+}
+
+.thumbinner img {
+    width:100%;
+    height:100%;
+}
+
+.thumbcaption {
+    text-align: left;
+    margin-top: 5px;
+}
+
+.thumbcaption img {
+    width:100%;
+    height:100%;
+}
+
+/* The following CSS Handles galleryboxes. */
+.gallery {
+    list-style: none;
+    margin: 0;
+    padding:0;
+    width: 100%;
+}
+
+.gallerybox {
+    margin-left: auto;
+    margin-right: auto;
+    padding:0;
+    margin-bottom:5px;
+    display: inline-block;
+    border: 2px solid #A6A6A6;
+    
+}
+
+.gallerybox .thumb {
+    border: 0px;
+}
+
+.gallerybox .thumb img {
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    width: auto;
+    max-width:100%;
+}
+
+.gallerytext {
+    text-align: center;
+    padding: 0;
+}
+
+/* Css for infoboxes */
+.infobox {
+    margin-left:auto;
+    margin-right:auto;
+    font-size:100% !important;
+    width: 100% !important;
+}
+
+.infobox td {
+    text-align:justify;
+}
+    
+.infobox th {
+    background-color: #eeeeee !important;
+    text-align:center;
+    color: #262626 !important;
+}
+
+/* Removes option to edit the infobox */
+.navbar{
+    display:none;
+}
+
+/* Displays listen graphics inline with text */
+img[alt="Listen"] {
+    display: inline;
+}
+img[alt="play"] {
+    display: inline;
+}
+
+/* Edits the topical table at the bottom of certain articles */
+.navbox{
+    width:100%;
+    font-size:100%;
+    border: 2px solid #eeeeee;
+}
+
+.navbox th {
+    text-align:center;
+    background-color: #eeeeee;
+    margin:0;
+}
+
+.navbox tr {
+    margin:0;
+    padding:0;
+}
+    
+.navbox td {
+    margin:0;
+    padding:0;
+}
