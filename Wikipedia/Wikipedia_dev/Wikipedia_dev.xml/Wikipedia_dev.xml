@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* **************************************************************************************
+Copyright (c), Microsoft Open Technologies, Inc.
+All rights reserved.
+
+Except for the third party material listed below, this code is licensed to you under the BSD 2-Clause License.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Third Party Notices
+
+This code incorporates trademarks and logos of the Wikimedia Foundation (the "Wikimedia Marks").  The Wikimedia Marks are used by Microsoft with permission from the Wikimedia Foundation.  You must obtain permission from the Wikimedia Foundation if you wish to use the Wikimedia Marks.
+
+***************************************************************************************** */
+-->
+
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+  <Id>5d49687c-66c4-4292-b9a7-1527a2fe9088</Id>
+    <Version>1.1.0.0</Version>
+  <ProviderName>Microsoft Corporation</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Wikipedia">
+    <!--OVERRIDEDISPLAYNAME-->
+  </DisplayName>
+  <Description DefaultValue="Find and quote related information from Wikipedia.">
+    <!--OVERRIDEDESCRIPTION-->
+  </Description>
+  <IconUrl DefaultValue="~remoteAppUrl/images/wikilogo_32x32.png">
+    <!--OVERRIDEICONURL-->
+  </IconUrl>
+  <SupportUrl DefaultValue="http://answers.microsoft.com/en-us/office/forum/office_home-office_store">
+    <!-- OVERRIDESUPPORTURL -->
+  </SupportUrl>
+  <Capabilities>
+    <!--Please verify your capabilities are targeting the proper apps -->
+    <Capability Name="Document"/>
+    <Capability Name="Workbook"/>
+  </Capabilities>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="~remoteAppUrl/Wikipedia_dev.html">
+    </SourceLocation>
+  </DefaultSettings>
+  <!-- Conversion tool is setting all permissions to Read/Write-->
+  <Permissions>ReadWriteDocument</Permissions>
+  <Dictionary>
+      <!--TargetDialects is the set of dialects your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. This is for different dialects of the same language. Please do NOT put more than one language (e.g. Spanish and English) here. Publish separate languages as separate dictionaries. -->
+      <TargetDialects>
+          <TargetDialect>EN-US</TargetDialect>
+      </TargetDialects>
+      <!--QueryUri is the address of this dictionary's XML webservice (which we use to put definitions in additional contexts, such as the spelling checker.)-->
+      <QueryUri DefaultValue="~remoteAppUrl/wikipedia_dev.html"/>
+      <!--Citation Text, Dictionary Name, and Dictionary Home Page will be combined to form the citation line - e.g. this would produce "Examples by: Microsoft", where "Microsoft" is a hyperlink to http://www.microsoft.com-->
+      <CitationText DefaultValue="Explained by: " />
+      <DictionaryName DefaultValue="Wikipedia" />
+      <DictionaryHomePage DefaultValue="https://en.wikipedia.org" />
+  </Dictionary>
+</OfficeApp>

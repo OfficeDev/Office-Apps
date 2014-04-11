@@ -1,0 +1,109 @@
+﻿/* **************************************************************************************
+Copyright (c), Microsoft Open Technologies, Inc.
+All rights reserved.
+
+Except for the third party material listed below, this code is licensed to you under the BSD 2-Clause License.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Third Party Notices
+
+This code incorporates trademarks and logos of the Wikimedia Foundation (the "Wikimedia Marks").  The Wikimedia Marks are used by Microsoft with permission from the Wikimedia Foundation.  You must obtain permission from the Wikimedia Foundation if you wish to use the Wikimedia Marks.
+
+***************************************************************************************** */
+
+.tabGroup {
+    position:absolute;
+    left:0;
+    top:120px;
+    width: 90%;     
+    padding:0 10px;
+    height:20px;
+    overflow:hidden;
+    text-transform:uppercase;
+    font-size:11px;
+}
+ 
+.tab {
+    float:left;
+    padding:0 0 0 0;
+    height:20px;
+}
+ 
+ 
+.tab div {
+    padding-right:20px;
+    padding-left:1px;       
+}
+
+.tab div a:focus {
+    outline: thin dotted; 
+}
+ 
+.ellipses {
+    float:left;
+    padding:0 0 0 0;
+    height:16px;
+    width:16px;
+    cursor:pointer;
+    margin-top:4px;    
+    background-image: url("../Images/OptionsWordFmtSpaces_16x16x32.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+ 
+.tabMenu {     
+    position:fixed;
+    top:140px;
+    right:0;
+    background-color: #fff;
+    width:110px;
+    display:none;
+    z-index:100;
+    border: 1px solid #cccccc;
+	box-shadow:0 2px 7px #909090;   /*opera or ie9*/
+}
+
+.tabMenu .options div {    
+    margin:5px 0 5px 20px; 
+}
+
+.tabMenu .options div a {
+    margin:0 0 0 5px;
+}
+
+.tabMenu .options div a:focus {
+    outline: thin dotted; 
+}
+
+.tab_selected {
+    font-weight:600;
+    color:#2c5898;
+}
+
+.tab_selected:hover {
+    color:#2c5898;
+}
+
+.tab_unselected {
+    font-weight:600;
+    color:#252525;
+}
+
+.tab_unselected:hover {
+    color:#2c5898;
+}
+
+.tab_hide {
+    margin-left: -20px;
+}
+
+.tab_show {
+    margin-left: 0px;
+}

@@ -1,0 +1,153 @@
+﻿<!--
+/* **************************************************************************************
+Copyright (c), Microsoft Open Technologies, Inc.
+All rights reserved.
+
+Except for the third party material listed below, this code is licensed to you under the BSD 2-Clause License.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Third Party Notices
+
+This code incorporates trademarks and logos of the Wikimedia Foundation (the "Wikimedia Marks").  The Wikimedia Marks are used by Microsoft with permission from the Wikimedia Foundation.  You must obtain permission from the Wikimedia Foundation if you wish to use the Wikimedia Marks.
+
+***************************************************************************************** */
+-->
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+    <meta name="description" content="This is a app for office which can search what you want by wikipeida api."/>
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript"/>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <title>Wikipedia</title>
+    <link href="styles/oxgagavestyle.css" rel="stylesheet" type="text/css" />
+    <link href="styles/app.css" rel="stylesheet" type="text/css" />
+    <link href="styles/oxgnavigationstyle.css" rel="stylesheet" type="text/css" />
+    <script src="//appsforoffice.microsoft.com/lib/1.0/hosted/office.js"></script>
+    <!--
+     NOTICE:  Third party scripts and code linked to or referenced here are licensed to you by
+     the third parties that own such code, not by Microsoft, see ASP.NET Ajax CDN Terms of Use –
+     http://www.asp.net/ajaxlibrary/CDN.ashx
+    -->
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.js"></script>
+    <script src="scripts/en-us/strings.js"></script>
+    <script src="scripts/wikipedia_dev.js"></script>
+    <noscript></noscript>
+</head>
+<body>
+     <div id="ms_osf_loadingOverlay" class="ms_osf_loading">
+        <div id="ms_osf_loadingAnimation" class="ms_osf_loading"></div>
+    </div>
+
+    <div id="ms_osf_body">
+
+        <!-- header -->
+        <div id="ms_osf_logoArea" class="ms_osf_splash">
+            <img id="ms_osf_logo" class="ms_osf_clickable" alt="Wikipedia logo" src="images/logo.png"/>
+        </div>
+        
+        <!-- search box-->
+        <div id="ms_osf_navBar">
+            <div id="ms_osf_backbutton" class="ms_osf_clickable" tabindex="1">
+                <img src="images/backbutton_24x.png" />
+            </div> 
+            
+            <div id="ms_osf_navContainer" class="ms_osf_hideBackButton"> 
+                <div id="ms_osf_searchBarInputWrapper" class="ms_osf_hideBackButton">
+                    <input id="ms_osf_searchBarInput" class="ms_osf_searchBarInputHint" maxlength="100" type="text" tabindex="2" />
+                </div> 
+                <div id="ms_osf_searchNavButtons">
+                    <span id="ms_osf_searchButton" class="ms_osf_clickable ms_osf_navButton" tabindex="3">
+                        <img src="images/searchmagnifyingglass_20x20x32.png" />
+                    </span>
+                    <span id="ms_osf_searchOptionsButton" class="ms_osf_clickable ms_osf_navButton" tabindex="4">
+                        <img src="images/options.png" />
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div id="ms_osf_searchOptions">
+            <div id="ms_osf_autosearch" class="ms_osf_clickable" tabindex="5">
+                <img id="ms_osf_autosearchCheckbox" src="images/checkmarkchecked_16x.png" />
+                <span id="ms_osf_autosearchString">AutoSearch</span>
+            </div>
+            <div id="ms_osf_searchInBrowser" class="ms_osf_clickable" tabindex="6">
+                <span id="ms_osf_searchInBrowserButton"></span>
+            </div>
+        </div>
+        <!-- end search box -->
+
+        <!-- end header -->
+
+        <div id="ms_osf_suggestionMessage"></div>
+
+        <!-- the menu bar -->
+        <div id="ms_osf_actions" class="tabGroup ms_osf_actions_hide">
+            <div class="tab"><div><a class="ms_osf_sections tab_unselected" tabindex="7"></a></div></div>
+            <div class="tab"><div><a class="ms_osf_images tab_unselected" tabindex="8"></a></div></div>
+            <div class="tab"><div><a class="ms_osf_infobox tab_unselected" tabindex="9"></a></div></div>
+            <div class="tab"><div><a class="ms_osf_reference tab_unselected" tabindex="10"></a></div></div>
+            <div id="tabEllipses" class="ellipses"></div>
+        </div>
+
+        <!-- the dropdown menu for the menu bar. contains options when the 
+                window is too small to contain everything on one row.-->
+        <div class="tabMenu">
+            <div class="innertube">
+                <div class="options">
+                    <div><a class="ms_osf_sections tab_unselected" tabindex="12"></a></div>
+                    <div><a class="ms_osf_images tab_unselected" tabindex="13"></a></div>
+                    <div><a class="ms_osf_infobox tab_unselected" tabindex="14"></a></div>
+                    <div><a class="ms_osf_reference tab_unselected" tabindex="15"></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- end menu bar -->
+
+        <!-- the article content area-->
+        <div id="ms_osf_content">
+            <div id="ms_osf_article" tabindex="16">
+                <div id="ms_osf_mainPageHint"></div>
+            </div>  
+        </div>
+        <!-- end article content -->
+
+        <!-- the insert text overlay -->
+        <div id="textInsert">
+            <img src="images/insettodoc_24x.png" />
+        </div>
+        
+        <!-- the globe splash decoration -->
+        <div id="ms_osf_globe"></div>
+
+        <input id="ms_osf_imageToBeInserted" type="hidden" />
+        <input id="ms_osf_textToBeInserted" type="hidden" />
+
+        <!-- the alert toast-->
+        <div id="ms_osf_errorPane">
+            <div id="ms_osf_errorHeadering">
+                <div id="ms_osf_errorHeader"></div>
+                <div id="ms_osf_errorExit" class="ms_osf_clickable" onclick="UI.errorExit()">
+                    <img src="images/closepaneglyphserverwhite_16x.png" />
+                </div>
+            </div>
+            <div id="ms_osf_errorMessage"></div>
+        </div>
+
+        <!-- the about page -->
+        <div id="ms_osf_aboutPane">
+            <div id="ms_osf_aboutMessage"></div>
+        </div>
+    </div>
+</body>
+</html>
