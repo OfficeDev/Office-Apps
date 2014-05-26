@@ -12,7 +12,8 @@ With the Office App source code project, you could learn from real app source co
 You could go to the Office Store to download the apps and then try the products in our repository (go to different branches). You are welcome to download the source codes and add new features on them.  
 
 ## Open Source projects ##
-[Wikipedia](http://office.microsoft.com/en-us/store/wikipedia-WA104099688.aspx?queryid=d393f241%2D3bfc%2D43c1%2Da72e%2D7ca7287ebed6&css=wikipedia&CTT=1)
+[Wikipedia](http://office.microsoft.com/en-us/store/wikipedia-WA104099688.aspx?queryid=d393f241%2D3bfc%2D43c1%2Da72e%2D7ca7287ebed6&css=wikipedia&CTT=1)  
+[PeopleGraph](http://office.microsoft.com/en-us/store/people-graph-WA104104476.aspx?queryid=d77a7844%2Da6b4%2D40f0%2D9335%2D8a0d8ff82d2c&css=people%20graph&CTT=1)  
 
 ## Apps for Office/SharePoint Introduction ##
 **Apps for Office** are web applications that extend what a document, email message, or meeting request can do in Office.  
