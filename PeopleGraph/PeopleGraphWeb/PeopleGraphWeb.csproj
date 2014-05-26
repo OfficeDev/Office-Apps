@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9E4652F-1EA2-48ED-A130-D38568F33B11}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PeopleGraphTestingWeb</RootNamespace>
+    <AssemblyName>PeopleGraphTestingWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44304</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="content\en-us\Office.css" />
+    <Content Include="content\en-us\PeopleGraph.css" />
+    <Content Include="images\AppIcon.png" />
+    <Content Include="images\Back.svg" />
+    <Content Include="images\Back_hover.svg" />
+    <Content Include="images\Back_press.svg" />
+    <Content Include="images\Close.png" />
+    <Content Include="images\Close_hover.png" />
+    <Content Include="images\Data.svg" />
+    <Content Include="images\Data_hover.svg" />
+    <Content Include="images\Data_press.svg" />
+    <Content Include="images\Setting.svg" />
+    <Content Include="images\Setting_hover.svg" />
+    <Content Include="images\Setting_press.svg" />
+    <Content Include="pages\PeopleGraph.html" />
+    <TypeScriptCompile Include="scripts\app.ts" />
+    <TypeScriptCompile Include="scripts\logic\configurator.agave.ts" />
+    <TypeScriptCompile Include="scripts\logic\data.binder.agave.ts" />
+    <TypeScriptCompile Include="scripts\logic\data.convertor.peoplebar.ts" />
+    <TypeScriptCompile Include="scripts\logic\layouter.base.d3.ts" />
+    <TypeScriptCompile Include="scripts\logic\layouter.callout.d3.ts" />
+    <TypeScriptCompile Include="scripts\logic\layouter.classic.d3.ts" />
+    <TypeScriptCompile Include="scripts\logic\layouter.giant.d3.ts" />
+    <TypeScriptCompile Include="scripts\logic\plotter.peoplebarbase.d3.ts" />
+    <TypeScriptCompile Include="scripts\logic\plotter.peoplebarcallout.d3.ts" />
+    <TypeScriptCompile Include="scripts\logic\plotter.peoplebarclassic.d3.ts" />
+    <TypeScriptCompile Include="scripts\logic\plotter.peoplebargiant.d3.ts" />
+    <TypeScriptCompile Include="scripts\logic\predefinedSKUs.ts" />
+    <TypeScriptCompile Include="scripts\UX\shared\BindingPane.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\chart.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\config.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\controller.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\cookie.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\data.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\decoration.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\layout.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\skus.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\tool.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\utils.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\validate.ts" />
+    <Content Include="scripts\opensource\d3\d3.v3.min.js" />
+    <TypeScriptCompile Include="scripts\strings\stringadapter.ts" />
+    <TypeScriptCompile Include="scripts\UX\BaseNotification.ts" />
+    <TypeScriptCompile Include="scripts\UX\BindingPaneSpecific.ts" />
+    <TypeScriptCompile Include="scripts\UX\DataPane.ts" />
+    <TypeScriptCompile Include="scripts\UX\Home.ts" />
+    <TypeScriptCompile Include="scripts\UX\Notification.ts" />
+    <TypeScriptCompile Include="scripts\UX\SettingPane.ts" />
+    <TypeScriptCompile Include="scripts\UX\shared\Galleries.ts" />
+    <Content Include="shapes\box.png" />
+    <Content Include="shapes\chi-pao.png" />
+    <Content Include="shapes\clock.png" />
+    <Content Include="shapes\cloth.png" />
+    <Content Include="shapes\dance-people.png" />
+    <Content Include="shapes\diamond.png" />
+    <Content Include="shapes\dolphin.png" />
+    <Content Include="shapes\dress.png" />
+    <Content Include="shapes\heart.png" />
+    <Content Include="shapes\laptop.png" />
+    <Content Include="shapes\moneybag.png" />
+    <Content Include="shapes\muscle-people.png" />
+    <Content Include="shapes\smile-people.png" />
+    <Content Include="shapes\stand-people.png" />
+    <Content Include="shapes\star.png" />
+    <Content Include="shapes\watch.png" />
+    <Content Include="SKUs\peoplebar-callout.png" />
+    <Content Include="SKUs\peoplebar-classic.png" />
+    <Content Include="SKUs\peoplebar-giant.png" />
+    <Content Include="themes\callout-blackgrey.css" />
+    <Content Include="themes\callout-blackgrey.png" />
+    <Content Include="themes\callout-blackgreyred.css" />
+    <Content Include="themes\callout-blackgreyred.png" />
+    <Content Include="themes\callout-blackyellow.css" />
+    <Content Include="themes\callout-blackyellow.png" />
+    <Content Include="themes\callout-blueblack.css" />
+    <Content Include="themes\callout-blueblack.png" />
+    <Content Include="themes\callout-greengrey.css" />
+    <Content Include="themes\callout-greengrey.png" />
+    <Content Include="themes\callout-roseblue.css" />
+    <Content Include="themes\callout-roseblue.png" />
+    <Content Include="themes\callout-whitered.css" />
+    <Content Include="themes\callout-whitered.png" />
+    <Content Include="themes\classic-blackyellow.css" />
+    <Content Include="themes\classic-blackyellow.png" />
+    <Content Include="themes\classic-bluegrey.css" />
+    <Content Include="themes\classic-bluegrey.png" />
+    <Content Include="themes\classic-bluewhite.css" />
+    <Content Include="themes\classic-bluewhite.png" />
+    <Content Include="themes\classic-greengrey.css" />
+    <Content Include="themes\classic-greengrey.png" />
+    <Content Include="themes\classic-redwhite.css" />
+    <Content Include="themes\classic-redwhite.png" />
+    <Content Include="themes\classic-rosewhite.css" />
+    <Content Include="themes\classic-rosewhite.png" />
+    <Content Include="themes\classic-whitered.css" />
+    <Content Include="themes\classic-whitered.png" />
+    <Content Include="themes\giant-greengrey.css" />
+    <Content Include="themes\giant-greengrey.png" />
+    <Content Include="themes\giant-redwhite.css" />
+    <Content Include="themes\giant-redwhite.png" />
+    <Content Include="themes\giant-redwhiteblack.css" />
+    <Content Include="themes\giant-redwhiteblack.png" />
+    <Content Include="themes\giant-roseblue.css" />
+    <Content Include="themes\giant-roseblue.png" />
+    <Content Include="themes\giant-rosewhite.css" />
+    <Content Include="themes\giant-rosewhite.png" />
+    <Content Include="themes\giant-whiterose.css" />
+    <Content Include="themes\giant-whiterose.png" />
+    <Content Include="themes\giant-yellowblue.css" />
+    <Content Include="themes\giant-yellowblue.png" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="layouts\layouts.json" />
+    <Content Include="themes\themes.json" />
+    <None Include="Properties\PublishProfiles\peoplegraph-demo - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\peoplegraph-demo - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\peoplegraphenglish - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\peoplegraphenglish - Web Deploy.pubxml" />
+    <Content Include="shapes\shapes.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:33381/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptOutFile>Scripts\PeopleGraph.js</TypeScriptOutFile>
+    <TypeScriptGeneratesDeclarations>true</TypeScriptGeneratesDeclarations>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <IncludeIisSettings>false</IncludeIisSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptOutFile>Scripts\PeopleGraph.js</TypeScriptOutFile>
+    <TypeScriptGeneratesDeclarations>true</TypeScriptGeneratesDeclarations>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>

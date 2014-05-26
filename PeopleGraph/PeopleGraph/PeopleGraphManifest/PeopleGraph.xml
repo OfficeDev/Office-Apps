@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* **************************************************************************************
+Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. 
+Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+***************************************************************************************** */
+-->
+
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ContentApp">
+    <Id>b0485f0b-1807-495b-bf21-c58a82619ac5</Id>
+    <Version>1.2.0.0</Version>
+    <ProviderName>Microsoft Corporation</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <DisplayName DefaultValue="People Graph" />
+    <Description DefaultValue="Transform cold data into a cool picture."/>
+    <IconUrl DefaultValue="~remoteAppUrl/images/AppIcon.png" />
+    <SupportUrl DefaultValue="http://answers.microsoft.com/en-us/office/forum/office_home-office_store">
+        <!-- OVERRIDESUPPORTURL -->
+    </SupportUrl>
+    <Capabilities>
+        <Capability Name="Workbook" />
+    </Capabilities>
+    <DefaultSettings>
+        <SourceLocation DefaultValue="~remoteAppUrl/pages/PeopleGraph.html" />
+        <RequestedWidth>580</RequestedWidth>
+        <RequestedHeight>400</RequestedHeight>
+    </DefaultSettings>
+    <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>

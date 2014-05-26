@@ -1,0 +1,176 @@
+﻿[
+    {
+        "id": "giant",
+        "elements":
+        [
+            {
+                "id": "canvas-background",
+                "element": "rect",
+                "cssClass": "canvas-background",
+                "attributes":
+                [
+                    { "name": "x", "value": 0 },
+                    { "name": "y", "value": 0 },
+                    { "name": "width", "value": "100%" },
+                    { "name": "height", "value": "100%" }
+                ],
+                "styles": []
+            },
+            {
+                "id": "title",
+                "element": "text",
+                "cssClass": "chart-title",
+                "attributes":
+                [
+                    { "name": "x", "value": 0 },
+                    { "name": "y", "value": 0 },
+                    { "name": "text-anchor", "value": "middle" }
+                ],
+                "styles": []
+            },
+            {
+                "id": "separator",
+                "element": "line",
+                "cssClass": "title-separator",
+                "attributes":
+                [
+                    { "name": "x1", "value": 0 },
+                    { "name": "y1", "value": 0 },
+                    { "name": "x2", "value": 0 },
+                    { "name": "y2", "value": 0 }
+                ],
+                "styles": []
+            },
+            {
+                "id": "chart-root",
+                "element": "svg",
+                "attributes":
+                [
+                    { "name": "x", "value": 0 },
+                    { "name": "y", "value": 0 },
+                    { "name": "width", "value": "100%" },
+                    { "name": "height", "value": "100%" }
+                ],
+                "styles": []
+            }
+        ]
+    },
+    {
+        "id": "callout",
+        "elements":
+        [
+            {
+                "id": "canvas-background",
+                "element": "rect",
+                "cssClass": "canvas-background",
+                "attributes":
+                [
+                    { "name": "x", "value": 0 },
+                    { "name": "y", "value": 0 },
+                    { "name": "width", "value": "100%" },
+                    { "name": "height", "value": "100%" }
+                ],
+                "styles": []
+            },
+            {
+                "id": "chart-background",
+                "element": "rect",
+                "cssClass": "chart-background",
+                "attributes":
+                [
+                    { "name": "x", "value": 0 },
+                    { "name": "y", "value": 0 },
+                    { "name": "width", "value": "100%" },
+                    { "name": "height", "value": "100%" }
+                ],
+                "styles":
+                [
+                    { "name": "fill", "value": "url(#backgroundPattern)" }
+                ]
+            },
+            {
+                "id": "title",
+                "element": "text",
+                "cssClass": "chart-title",
+                "attributes":
+                [
+                    { "name": "x", "value": 32 },
+                    { "name": "y", "value": 0 },
+                    { "name": "text-anchor", "value": "start" }
+                ],
+                "styles": []
+            },
+            {
+                "id": "chart-root",
+                "element": "svg",
+                "attributes":
+                [
+                    { "name": "x", "value": 0 },
+                    { "name": "y", "value": 0 },
+                    { "name": "width", "value": "100%" },
+                    { "name": "height", "value": "100%" }
+                ],
+                "styles": []
+            }
+        ]
+    },
+    {
+        "id": "classic",
+        "elements":
+        [
+            {
+                "id": "canvas-background",
+                "element": "rect",
+                "cssClass": "canvas-background",
+                "attributes":
+                [
+                    { "name": "x", "value": 0 },
+                    { "name": "y", "value": 0 },
+                    { "name": "width", "value": "100%" },
+                    { "name": "height", "value": "100%" }
+                ],
+                "styles": []
+            },
+            {
+                "id": "chart-background",
+                "element": "rect",
+                "cssClass": "chart-background",
+                "attributes":
+                [
+                    { "name": "x", "value": 0 },
+                    { "name": "y", "value": 0 },
+                    { "name": "width", "value": "100%" },
+                    { "name": "height", "value": "100%" }
+                ],
+                "styles":
+                [
+                    { "name": "fill", "value": "url(#backgroundPattern)" }
+                ]
+            },
+            {
+                "id": "title",
+                "element": "text",
+                "cssClass": "chart-title",
+                "attributes":
+                [
+                    { "name": "x", "value": 32 },
+                    { "name": "y", "value": 0 },
+                    { "name": "text-anchor", "value": "start" }
+                ],
+                "styles": []
+            },
+            {
+                "id": "chart-root",
+                "element": "svg",
+                "attributes":
+                [
+                    { "name": "x", "value": 0 },
+                    { "name": "y", "value": 0 },
+                    { "name": "width", "value": "100%" },
+                    { "name": "height", "value": "100%" }
+                ],
+                "styles": []
+            }
+        ]
+    }
+]

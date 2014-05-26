@@ -1,0 +1,590 @@
+.button {
+    font-family:'Segoe UI Semibold','Segoe UI Web Semibold','Segoe UI Web Regular','Segoe UI','Segoe UI Symbol','HelveticaNeue-Medium','Helvetica Neue',Arial,sans-serif;
+    font-size:14px;
+    text-align:center;
+    border:0;
+    min-width:80px;
+    max-width:200px;
+    height: 30px;
+    cursor: pointer;
+    padding: 0px 20px 2px 20px;
+    line-height: 28px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.button-green {
+    color:#ffffff;
+    background:#217346;
+}
+
+.button-green:hover,.button-green:focus {
+    background-color:#439467;
+    border:0;
+    outline:0;
+}
+
+.button-green:active
+{
+    background-color:#0a6332;
+    border:0;
+    outline:0;
+}
+
+button[disabled], button[disabled]:hover {
+    color:#999999;
+    background-color:#e5e5e5;
+    cursor:default;
+}
+
+.button-white {
+    color:#444444;
+    background-color:white;
+    border:1px solid #ababab;
+}
+
+.button-white:hover,.button-white:focus {
+    color:black;
+    background-color:white;
+    border:1px solid #444444;
+    outline: 0;
+}
+
+.button-white:active {
+    color:#ffffff;
+    background-color:#217346;
+}
+
+.back-button
+{
+    float: left;
+    cursor: pointer;
+    top: 0px;
+    left: 0px;
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-right: 10px;
+    background: url("../../images/Back.svg") no-repeat;
+}
+
+.back-button:hover,.back-button:focus
+{
+    background: url("../../images/Back_hover.svg") no-repeat;
+    border: 0;
+    outline: 0;
+}
+
+.back-button:active
+{
+    background: url("../../images/Back_press.svg") no-repeat;
+    border: 0;
+    outline: 0;
+}
+
+body
+{
+    line-height: normal;
+    margin: 0;
+    padding: 1px;
+}
+
+.click-style
+{
+    border: 2px solid #228753;
+    outline: 0;
+}
+
+.close-button
+{
+    float: right;
+    position: relative;
+    cursor: pointer;
+    top: 5px;
+    right: 5px;
+}
+
+.content-pane-style
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    padding: 0px;
+    touch-action:pan-x pan-y;
+    -ms-touch-action:pan-x pan-y;
+}
+
+.data-pane-button
+{
+    margin-top: 20px;
+    margin-left: 25px;
+    position: relative; 
+    width: 160px;
+    padding:0;
+    height:30px;
+    cursor: pointer;
+}
+
+.divided-line-style
+{
+    position: relative;
+    width: 170px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-bottom: 2px solid green;
+    padding:0;
+}
+
+.error-button-cancel
+{
+    position:relative;
+    float:right;
+    right:20px;  
+    margin-bottom:15px; 
+}
+
+.error-button-ok
+{
+    position:relative;
+    float:right;
+    right:30px;
+    margin-bottom:15px; 
+}
+
+.error-content-style
+{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height:auto;
+    background-color: #FFFFFF;
+    z-index: 1;
+    display: none;
+    padding-bottom:0;
+}
+
+.error-dim-style
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    filter: alpha(opacity = 50);
+    opacity: 0.5;
+    display: none;
+}
+
+.error-text-style
+{
+    font-family:'Segoe UI', Arial, Verdana, Sans-Serif;
+    font-size: 12px;
+    color: #262626;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom:20px;
+}
+
+.error-title-style
+{
+    font-family:'Segoe UI', Arial, Verdana, Sans-Serif;
+    font-size: 20px;
+    color: #262626;
+    position: relative;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-bottom:0px;
+}
+
+.float-menu-style
+{
+    width: 95%;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    text-align: right;
+    float: none;
+    display: normal;
+}
+
+.msft-feedback
+{
+    background-repeat: no-repeat;
+    height: 100%;
+    position: relative;
+    float: right;
+    top: 12px;
+    left: 0px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.notification-button
+{
+    font-family:'Segoe UI Semibold','Segoe UI Web Semibold','Segoe UI Web Regular','Segoe UI','Segoe UI Symbol','HelveticaNeue-Medium','Helvetica Neue',Arial,sans-serif;
+    font-size:14px;
+    text-align:center;
+    border:none;
+    height: 30px;
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+    line-height: 28px;
+    float:right;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    top: 10px;
+    position:relative;
+}
+
+.notification-close
+{
+    background:url(../../images/Close.png) no-repeat;
+    width:10px;
+    height:10px;
+    position:absolute;
+    float:right;
+    right:10px;
+    top:19px;
+}
+
+.notification-close:hover {
+    background:url(../../images/Close_hover.png) no-repeat;
+}
+
+.notification-icon {
+    position:absolute;
+    margin-left:15px;
+    margin-top:16px;
+    display:none;
+}
+
+.notification-style
+{
+    position: absolute;
+    height:auto;
+    width: 100%;
+    background-color:#dddddd;
+    padding-bottom:0;
+}
+
+.notification-text
+{
+    font-family:'Segoe UI', Arial, Verdana, Sans-Serif;
+    font-size:12px;
+    color:#262626;
+    float:left;
+    margin-left:15px;
+    margin-top:15px;
+    margin-right:25px;
+    margin-bottom:20px;
+}
+
+.select-style
+{
+    width: 170px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    top:6px;
+    margin-bottom:15px;
+}
+
+.setting-pane-style
+{
+    height: 100%;
+    width: 0px;
+    padding: 0;
+    background: #ffffff;
+    border: hidden;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    position: absolute;
+    border-left: 1px solid #eaecee;
+    display: none;
+    touch-action:pan-x pan-y;
+    -ms-touch-action:pan-x pan-y;
+}
+
+.float-menu-button
+{
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float:right;
+    width: 32px;
+    height: 32px;
+}
+
+.data-button
+{
+    background: url(../../images/Data.svg) no-repeat;
+}
+
+.data-button:hover
+{
+    background: url(../../images/Data_hover.svg) no-repeat;
+}
+
+.data-button:active
+{
+    background: url(../../images/Data_press.svg) no-repeat;
+}
+
+.setting-button
+{
+    background: url(../../images/Setting.svg) no-repeat;
+}
+
+.setting-button:hover
+{
+    background: url(../../images/Setting_hover.svg) no-repeat;
+}
+
+.setting-button:active
+{
+    background: url(../../images/Setting_press.svg) no-repeat;
+}
+
+.style
+{
+    height: 100%;
+    margin: 0;
+}
+
+.sub-edit-pane
+{
+    height:77%;
+    width:215px;
+    margin-left: 5px;
+    border:hidden;
+    overflow-x:hidden;
+    overflow-y:auto;
+    display:normal;
+    position:absolute;
+}
+
+.sub-setting-pane
+{
+    top: 80px;
+    right: 0px;
+    display: none;
+    position: fixed;
+}
+
+.setting-pane-tabs-row
+{
+    position: absolute;
+    margin: 0px 8px;
+    outline:0;
+}
+
+.sub-title
+{
+    font-size: 16px;
+    font-family: 'Segoe UI Semilight','Segoe UI Web Semilight','Segoe UI Web Regular','Segoe UI','Segoe UI Symbol','HelveticaNeue-Medium','Helvetica Neue',Arial,sans-serif;
+    margin: 22px 0px 6px 0px;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    padding: 0px 7px;
+    color: #666666;
+}
+
+.sub-title:hover {
+    color: #262626;
+}
+
+.sub-title-click
+{
+    color: #228753;
+    font-family: 'Segoe UI', Arial, Verdana, Sans-Serif;
+    outline: 0;
+}
+
+.sub-title-click:hover
+{
+    color: #0a6332;
+}
+
+.text
+{
+    width: 190px;
+    height: 15px;
+    color: #262626;
+    margin: 20px 0px 7px 10px; 
+    font-size: 15px;
+    font-family: 'Segoe UI Semilight','Segoe UI Web Semilight','Segoe UI Web Regular','Segoe UI','Segoe UI Symbol','HelveticaNeue-Medium','Helvetica Neue',Arial,sans-serif;
+    position:relative;
+}
+
+.title
+{
+    font-size: 20px;
+    text-align: left;
+    font-weight: lighter;
+    font-family: 'Segoe UI Semilight','Segoe UI Web Semilight','Segoe UI Web Regular','Segoe UI','Segoe UI Symbol','HelveticaNeue-Medium','Helvetica Neue',Arial,sans-serif;
+    float: left;
+    height: 30px;
+    color: #262626;
+    margin-left: 49px;
+    top:18px;
+    position: absolute;
+}
+
+.title-edit-style
+{
+    width: 186px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    border:2px solid #eaecee;
+    padding-left: 5px;
+    margin-left: 10px;
+    resize: none;
+}
+
+.title-edit-style:hover, .title-edit-style:focus
+{
+    border:2px solid #666666;
+}
+
+.gallery-item {
+    outline: 0;
+    border: none;
+}
+
+.gallery-item:hover, .gallery-item:focus {
+    border: 2px solid #c6c6c6; 
+}
+
+.gallery-item:active {
+    border: 2px solid #228753; 
+}
+
+.gallery-item-click {
+    outline: 0;
+    border: 2px solid #228753; 
+}
+
+.gallery-item-click:hover {
+    border: 2px solid #0a6332;
+}
+
+::selection {
+    background: #c6c6c6;
+}
+
+::-moz-selection {
+    background: #c6c6c6;
+}
+
+.button-group {
+    width: 100%;
+    padding: 0;
+    position: relative;
+}
+
+.binding-pane-ok
+{
+    float: right;
+    position: relative;
+}
+
+.binding-pane-cancel
+{
+    float: right;
+    position: relative;
+}
+
+.binding-dim-style
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 200;
+    filter: alpha(opacity = 30);
+    opacity: 0.3;
+    display: none;
+}
+
+.binding-pane-style
+{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    z-index: 1000;
+    display: none;
+    padding-bottom:0;
+    touch-action: pan-x pan-y;
+    -ms-touch-action: pan-x pan-y;
+}
+
+.binding-pane-title-style
+{
+    width: 100%;
+    font-family: 'Segoe UI Semilight','Segoe UI Web Semilight','Segoe UI Web Regular','Segoe UI','Segoe UI Symbol','HelveticaNeue-Medium','Helvetica Neue',Arial,sans-serif;
+    color: #404041;
+    text-align: left;    
+    line-height: 0;
+    position: relative;
+}
+
+.binding-pane-subtitle-style
+{
+    font-family: 'Segoe UI Semilight','Segoe UI Web Semilight','Segoe UI Web Regular','Segoe UI','Segoe UI Symbol','HelveticaNeue-Medium','Helvetica Neue',Arial,sans-serif;
+    color: #218753;
+    padding: 0;
+    line-height: 0;
+    position: relative;
+}
+
+.sample-data-pane-style {
+    height: auto;
+    padding: 0px;
+    display: normal;
+    position: relative;
+}
+
+.binding-pane-info-text-style
+{
+    font-family: 'Segoe UI', Arial, Verdana, Sans-Serif;
+    color: #218753;
+    padding-bottom: 0px;
+    position: relative;
+}
+
+table {
+    border-top: 1px solid #818285;
+    border-bottom: 1px solid #818285;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td {
+    border-top: 2px solid #818285;
+    border-bottom: 2px solid #818285;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, Verdana, Sans-Serif;
+    color: #818285;
+    line-height: 0px;
+    cursor: default;
+}
