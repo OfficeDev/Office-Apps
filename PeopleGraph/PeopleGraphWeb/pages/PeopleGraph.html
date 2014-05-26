@@ -1,0 +1,73 @@
+﻿<!--
+/* **************************************************************************************
+Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. 
+Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+***************************************************************************************** */
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Microsoft People Graph</title>
+
+    <link rel="stylesheet" type="text/css" id="general-css" href="../content/en-us/Office.css" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="../content/en-us/PeopleGraph.css" />
+    <link rel="stylesheet" type="text/css" id="chart-theme" href="../themes/giant-redwhiteblack.css" />
+
+    <!-- Third party scripts and code linked to or referenced here are licensed to you by the third parties that own such code, not by Microsoft, see ASP.NET Ajax CDN Terms of Use - "http://www.asp.net/ajaxlibrary/CDN.ashx". -->
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js"></script>
+
+    <script src="//appsforoffice.microsoft.com/lib/1.0/hosted/office.js"></script>
+
+    <script src="../scripts/opensource/d3/d3.v3.min.js"></script>
+    <script src="../scripts/PeopleGraph.js"></script>
+</head>
+<body>
+    <div id="content-pane" class="content-pane-style">
+        <div id="float-menu" class="float-menu-style"> 
+
+            <div id="chart-setting-button" class="float-menu-button setting-button"></div>
+            <div id="data-settings-button" class="float-menu-button data-button"></div>
+        </div>
+        <svg id="canvas-root" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" width="100%" height="100%">
+        </svg>
+        <div id="setting-pane" class="setting-pane-style">
+            <div id="back-button" class="back-button" tabindex="1"></div>
+            <div id="setting-pane-title" class="title"></div>
+            <br />
+            <br />
+            <div class="setting-pane-tabs-row" tabindex="-1">
+                <div id="type-button" class="sub-title" tabindex="1"></div>
+                <div id="theme-button" class="sub-title" tabindex="1"></div>
+                <div id="shape-button" class="sub-title" tabindex="1"></div>
+            </div>
+            <br />
+            <div id="type-pane" class="sub-edit-pane sub-setting-pane"></div>
+            <div id="theme-pane" class="sub-edit-pane sub-setting-pane"></div>
+            <div id="shape-pane" class="sub-edit-pane sub-setting-pane"></div>
+        </div>
+        <div id="data-pane" class="setting-pane-style">
+            <div id="data-back-button" class="back-button" tabindex="1"></div>
+            <div id="data-pane-title" class="title"></div>
+            <br />
+            <br />
+            <div id="sub-data-pane" class="sub-edit-pane" style="top: 44px">
+                <div id="select-data" class="button button-green data-pane-button" tabindex="1"></div>
+                <p id="edit-title-label" class="text"></p>
+                <textarea id="edit-title" class="title-edit-style" tabindex="1"></textarea>
+            </div>
+        </div>
+    </div>
+    <div style="display:none">
+        <img src="../images/Back.svg" />
+        <img src="../images/Back_hover.svg" />
+        <img src="../images/Back_press.svg" />
+        <img src="../images/Data_hover.svg" />
+        <img src="../images/Data_press.svg" />
+        <img src="../images/Setting_hover.svg" />
+        <img src="../images/Setting_press.svg" />
+    </div>
+</body>
+</html>

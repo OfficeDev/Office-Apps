@@ -1,0 +1,128 @@
+﻿[
+    {
+        "id": "giant-redwhiteblack",
+        "sku": "peoplebar-giant",
+        "thumbnail": "../themes/giant-redwhiteblack.png",
+        "css": "../themes/giant-redwhiteblack.css"
+    },
+    {
+        "id": "giant-greengrey",
+        "sku": "peoplebar-giant",
+        "thumbnail": "../themes/giant-greengrey.png",
+        "css": "../themes/giant-greengrey.css"
+    },
+    {
+        "id": "giant-roseblue",
+        "sku": "peoplebar-giant",
+        "thumbnail": "../themes/giant-roseblue.png",
+        "css": "../themes/giant-roseblue.css"
+    },
+    {
+        "id": "giant-redwhite",
+        "sku": "peoplebar-giant",
+        "thumbnail": "../themes/giant-redwhite.png",
+        "css": "../themes/giant-redwhite.css"
+    },
+    {
+        "id": "giant-rosewhite",
+        "sku": "peoplebar-giant",
+        "thumbnail": "../themes/giant-rosewhite.png",
+        "css": "../themes/giant-rosewhite.css"
+    },
+    {
+        "id": "giant-whiterose",
+        "sku": "peoplebar-giant",
+        "thumbnail": "../themes/giant-whiterose.png",
+        "css": "../themes/giant-whiterose.css"
+    },
+    {
+        "id": "giant-yellowblue",
+        "sku": "peoplebar-giant",
+        "thumbnail": "../themes/giant-yellowblue.png",
+        "css": "../themes/giant-yellowblue.css"
+    },
+    {
+        "id": "classic-bluewhite",
+        "sku": "peoplebar-classic",
+        "thumbnail": "../themes/classic-bluewhite.png",
+        "css": "../themes/classic-bluewhite.css"
+    },
+    {
+        "id": "classic-redwhite",
+        "sku": "peoplebar-classic",
+        "thumbnail": "../themes/classic-redwhite.png",
+        "css": "../themes/classic-redwhite.css"
+    },
+    {
+        "id": "classic-blackyellow",
+        "sku": "peoplebar-classic",
+        "thumbnail": "../themes/classic-blackyellow.png",
+        "css": "../themes/classic-blackyellow.css"
+    },
+    {
+        "id": "classic-bluegrey",
+        "sku": "peoplebar-classic",
+        "thumbnail": "../themes/classic-bluegrey.png",
+        "css": "../themes/classic-bluegrey.css"
+    },
+    {
+        "id": "classic-greengrey",
+        "sku": "peoplebar-classic",
+        "thumbnail": "../themes/classic-greengrey.png",
+        "css": "../themes/classic-greengrey.css"
+    },
+    {
+        "id": "classic-rosewhite",
+        "sku": "peoplebar-classic",
+        "thumbnail": "../themes/classic-rosewhite.png",
+        "css": "../themes/classic-rosewhite.css"
+    },
+    {
+        "id": "classic-whitered",
+        "sku": "peoplebar-classic",
+        "thumbnail": "../themes/classic-whitered.png",
+        "css": "../themes/classic-whitered.css"
+    },
+    {
+        "id": "callout-blackyellow",
+        "sku": "peoplebar-callout",
+        "thumbnail": "../themes/callout-blackyellow.png",
+        "css": "../themes/callout-blackyellow.css"
+    },
+    {
+        "id": "callout-blackgrey",
+        "sku": "peoplebar-callout",
+        "thumbnail": "../themes/callout-blackgrey.png",
+        "css": "../themes/callout-blackgrey.css"
+    },
+    {
+        "id": "callout-blackgreyred",
+        "sku": "peoplebar-callout",
+        "thumbnail": "../themes/callout-blackgreyred.png",
+        "css": "../themes/callout-blackgreyred.css"
+    },
+    {
+        "id": "callout-blueblack",
+        "sku": "peoplebar-callout",
+        "thumbnail": "../themes/callout-blueblack.png",
+        "css": "../themes/callout-blueblack.css"
+    },
+    {
+        "id": "callout-greengrey",
+        "sku": "peoplebar-callout",
+        "thumbnail": "../themes/callout-greengrey.png",
+        "css": "../themes/callout-greengrey.css"
+    },
+    {
+        "id": "callout-roseblue",
+        "sku": "peoplebar-callout",
+        "thumbnail": "../themes/callout-roseblue.png",
+        "css": "../themes/callout-roseblue.css"
+    },
+    {
+        "id": "callout-whitered",
+        "sku": "peoplebar-callout",
+        "thumbnail": "../themes/callout-whitered.png",
+        "css": "../themes/callout-whitered.css"
+    }
+]

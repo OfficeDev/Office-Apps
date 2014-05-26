@@ -1,0 +1,54 @@
+.chart-title
+{
+    fill:#D64579;
+    font-family: 'Segoe UI Light','Segoe UI Web Light','Segoe UI Web Regular','Segoe UI','Helvetica Neue',Arial,Sans-Serif;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.chart-value-label
+{
+    fill: #D64579;
+    font-weight: bold;
+    font-family: 'Segoe UI',Arial,Verdana,Sans-Serif;
+    font-style: italic;
+}
+
+.chart-label
+{
+    fill: white;
+    font-family: 'Segoe UI Light',Verdana,'Segoe UI','Helvetica Neue',Arial,Sans-Serif;
+    font-style: italic;
+}
+
+.chart-label-callout
+{
+    fill: #886471;
+    stroke-width: 0px;
+}
+
+.chart-shape
+{
+    fill: #D64579;
+}
+
+.chart-shape-percentage
+{
+    fill: #D64579;
+}
+
+.chart-background-path
+{
+    stroke: none;
+    opacity: 0;
+}
+
+.canvas-background
+{
+    fill:#EAF6FC
+}
+
+.chart-background
+{
+    fill:#EAF6FC
+}
