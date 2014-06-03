@@ -1,0 +1,127 @@
+﻿.ui-resizable-e {
+    background-color: #231f20;
+}
+
+.theme-background-color
+{
+    background-color: #fbe35b;
+}
+
+.theme-first-row-group {
+    border-bottom: 1px solid #231f20;
+}
+
+.theme-text
+{
+    color:#231f20; 
+}
+
+.theme-shortdes1-group {
+    border-right: 1px solid #231f20;
+}
+
+.theme-shortdes2-group {
+    border-right: 1px solid #231f20;
+}
+
+.theme-chart-label {
+    fill: #231f20;
+}
+
+.theme-chart-ticks {
+    stroke: #231f20;
+}
+
+.theme-chart-value {
+    fill: #fbe35b;
+}
+
+.theme-chart-line-0 {
+    fill: #231f20;
+    stroke: #231f20;
+}
+
+.theme-chart-line-1 {
+    fill: #5bc4bc;
+    stroke: #5bc4bc;
+}
+
+.theme-chart-line-2 {
+    fill: #f1676e;
+    stroke: #f1676e;
+}
+
+.theme-chart-line-3 {
+    fill: #ab206f;
+    stroke: #ab206f;
+}
+
+.theme-chart-line-4 {
+    fill: #9da6b2;
+    stroke: #9da6b2;
+}
+
+.theme-legend-textarea-0 {
+    color: #231f20;
+}
+
+.theme-legend-textarea-1 {
+    color: #5bc4bc;
+}
+
+.theme-legend-textarea-2 {
+    color: #f1676e;
+}
+
+.theme-legend-textarea-3 {
+    color: #ab206f;
+}
+
+.theme-legend-textarea-4 {
+    color: #9da6b2;
+}
+
+.theme-checkbox-line-0-checked {
+    background: #231f20 url('check-white.svg') no-repeat center;
+    background-size: contain;
+}
+
+.theme-checkbox-line-0-unchecked {
+    background: #231f20;
+}
+
+.theme-checkbox-line-1-checked {
+    background: #5bc4bc url('check-white.svg') no-repeat center;
+    background-size: contain;
+}
+
+.theme-checkbox-line-1-unchecked {
+    background: #5bc4bc;
+}
+
+.theme-checkbox-line-2-checked {
+    background: #f1676e url('check-white.svg') no-repeat center;
+    background-size: contain;
+}
+
+.theme-checkbox-line-2-unchecked {
+    background: #f1676e;
+}
+
+.theme-checkbox-line-3-checked {
+    background: #ab206f url('check-white.svg') no-repeat center;
+    background-size: contain;
+}
+
+.theme-checkbox-line-3-unchecked {
+    background: #ab206f;
+}
+
+.theme-checkbox-line-4-checked {
+    background: #9da6b2 url('check-white.svg') no-repeat center;
+    background-size: contain;
+}
+
+.theme-checkbox-line-4-unchecked {
+    background: #9da6b2;
+}

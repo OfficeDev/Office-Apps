@@ -1,0 +1,185 @@
+/******************************************************************
+Base
+******************************************************************/
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    height: 100%;
+    max-height: 100%;
+}
+
+/******************************************************************
+Typography
+******************************************************************/
+body {
+    font-family: "Segoe WP", "Segoe UI", "Arial", sans-serif;
+    font-size: 12px;
+    color: #262626;
+}
+
+h1 {
+    font-family: "Segoe WP Light", "Segoe UI", "Arial", sans-serif;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 500;
+}
+
+h2, h3, h4, h5, h6, th {
+    font-family: "Segoe WP Semibold", "Segoe UI", "Arial", sans-serif;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+h3, h4, h5, h6 {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+h4, h5, h6 {
+    font-weight: normal;
+}
+
+form, input, select, button {
+    font-family: "Segoe WP", "Segoe UI", "Arial", sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+blockquote {
+    font-style: italic;
+    margin-left: 1em;
+}
+
+/******************************************************************
+Links
+******************************************************************/
+a {
+    color: #336699;
+    text-decoration: none;
+}
+
+    a:focus, a:hover, a:active {
+        text-decoration: underline;
+    }
+
+/******************************************************************
+Grouping
+******************************************************************/
+ul {
+    margin-left: 1em;
+    padding: 0;
+}
+
+p {
+    padding: 0;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    color: #ebebeb;
+    background-color: #ebebeb;
+    clear: both;
+}
+
+/******************************************************************
+Embedded
+******************************************************************/
+img {
+    border: none;
+}
+
+/******************************************************************
+Forms
+******************************************************************/
+form {
+    clear: both;
+}
+
+legend {
+    margin: 0.2em 0;
+}
+
+fieldset {
+    margin: 0 0 12px 0;
+    padding: 0 3px;
+    border: none;
+}
+
+div {
+    outline: none;
+}
+
+input, textarea, select {
+    margin: 2px 0 5px 0;
+    padding: 3px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+    input[type="text"], input[type="password"], textarea, select {
+        width: 100%;
+    }
+
+    button, input[type="submit"], input[type="button"] {
+        border: 1px solid #ababab;
+        background: white;
+        cursor: pointer;
+        text-align: center;
+        line-height: 1em;
+        padding: 5px 16px 5px 16px;
+    }
+
+        input[type="submit"]:hover, input[type="button"]:hover {
+            border-color: #7eB4ea;
+            background: #e5f1fc;
+            text-decoration: none;
+        }
+
+        input[type="submit"]:active, input[type="button"]:active {
+            border-color: #569de5;
+            background: #cee5fc;
+        }
+
+label {
+    margin-right: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+input[type="radio"] {
+    margin-right: 2px;
+}
+
+input[type="text"], input[type="password"], input[type="submit"], input[type="button"], textarea, select {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+/******************************************************************
+Scrollbars
+******************************************************************/
+body {
+    scrollbar-base-color: white;
+    scrollbar-arrow-color: #ababab;
+    scrollbar-highlight-color: #ababab;
+    scrollbar-darkshadow-color: white;
+    scrollbar-track-color: white;
+    scrollbar-face-color: white;
+}

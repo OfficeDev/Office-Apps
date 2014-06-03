@@ -1,0 +1,177 @@
+﻿/* **************************************************************************************
+Copyright © Microsoft Open Technologies, Inc.
+
+All Rights Reserved
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at 
+
+http://www.apache.org/licenses/LICENSE-2.0 
+
+THIS CODE IS PROVIDED *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABLITY OR NON-INFRINGEMENT. 
+
+See the Apache 2 License for the specific language governing permissions and limitations under the License.
+
+***************************************************************************************** */
+
+///<reference path="shared/BindingPane.ts"/>
+///<reference path="../logic/configurator.agave.ts"/>
+///<reference path="../strings/stringadapter.ts"/>
+
+declare var $: any;
+declare var Office: any;
+
+module DataViz.UX {
+    export class BindingPaneSpecific extends BindingPane {
+        private static instance: BindingPaneSpecific;
+
+        /**
+          * Get the singleton instance.
+          */
+        public static getInstance(): BindingPaneSpecific {
+            if (!BindingPaneSpecific.instance) {
+                BindingPaneSpecific.instance = new BindingPaneSpecific();
+            }
+
+            return BindingPaneSpecific.instance;
+        }
+
+        public handleDataSelection() {
+            Office.context.document.getSelectedDataAsync(
+                Office.CoercionType.Matrix,
+                { valueFormat: Office.ValueFormat.Unformatted, filterType: Office.FilterType.OnlyVisible },
+                (result: any) => {
+                    if (result.status === Office.AsyncResultStatus.Succeeded) {
+                        this.bindingData = result.value;
+
+                        if (result.value[0].length < 2) {
+                            this.setInfoTextAndButton(DataViz.Resources.BindingPane.infoSelectTwoColumns, DataViz.UX.infoColors.red, false);
+                        }
+                        else if (!this.isFirstColumnNonEmpty(result.value)) {
+                            this.setInfoTextAndButton(DataViz.Resources.BindingPane.infoFirstColumnEmpty, DataViz.UX.infoColors.red, false);
+                        }
+                        else if (!this.isSecondColumnHasNumber(result.value)) {
+                            this.setInfoTextAndButton(DataViz.Resources.BindingPane.infoSecondColumnContainNumber, DataViz.UX.infoColors.red, false);
+                        }
+                        else if (!this.isFirstRowNonEmpty(result.value)) {
+                            this.setInfoTextAndButton(DataViz.Resources.BindingPane.infoFirstRowEmpty, DataViz.UX.infoColors.red, false);
+                        }
+                        else {
+                            var rowCount = result.value.length;
+                            var columnCount = result.value[0].length;
+                            var culture = DataViz.Config.Trends.Culture;
+                            var rowString = this.getPluralString(DataViz.Resources.Pluralization.rows, rowCount);
+                            var columnString = this.getPluralString(DataViz.Resources.Pluralization.columns, columnCount);
+                            var maxRowNumber = DataViz.Config.Trends.MaxColumnNumber;
+                            var maxColumnNumber = DataViz.Config.Trends.MaxLineNumber + 1;
+                            var maxRowString = this.getPluralString(DataViz.Resources.Pluralization.rows, maxRowNumber);
+                            var maxColumnString = this.getPluralString(DataViz.Resources.Pluralization.columns, maxColumnNumber);
+
+                            var infoString = "";
+                            if (rowCount > maxRowNumber && columnCount > maxColumnNumber) {
+                                infoString = DataViz.Utils.stringFormat(DataViz.Resources.BindingPane.infoMaxRowAndColumn,
+                                    rowCount,
+                                    rowString,
+                                    columnCount,
+                                    columnString,
+                                    maxRowNumber,
+                                    maxRowString,
+                                    maxColumnNumber,
+                                    maxColumnString);
+                            }
+                            else if (rowCount > maxRowNumber && columnCount <= maxColumnNumber) {
+                                infoString = DataViz.Utils.stringFormat(DataViz.Resources.BindingPane.infoMaxRow,
+                                    rowCount,
+                                    rowString,
+                                    columnCount,
+                                    columnString,
+                                    maxRowNumber,
+                                    maxRowString);
+                            }
+                            else if (rowCount <= maxRowNumber && columnCount > maxColumnNumber) {
+                                infoString = DataViz.Utils.stringFormat(DataViz.Resources.BindingPane.infoMaxColumn,
+                                    rowCount,
+                                    rowString,
+                                    columnCount,
+                                    columnString,
+                                    maxColumnNumber,
+                                    maxColumnString);
+                            }
+                            else {
+                                infoString = DataViz.Utils.stringFormat(DataViz.Resources.BindingPane.infoNormal,
+                                    rowCount,
+                                    rowString,
+                                    columnCount,
+                                    columnString);
+                            }
+
+                            this.setInfoTextAndButton(infoString, DataViz.UX.infoColors.green, true);
+                        }
+                    }
+                    // "1008" is the error code for "Data Read Error"
+                    else if (result.error.code === 1008) {
+                        this.setInfoTextAndButton(DataViz.Resources.BindingPane.infoDataSetTooLarge, DataViz.UX.infoColors.red, false);
+                    }
+                    else {
+                        this.setInfoTextAndButton(DataViz.Resources.BindingPane.infoSelectData, DataViz.UX.infoColors.red, false);
+                    }
+                }
+                );
+        }
+
+        private isFirstColumnNonEmpty(value: any[][]): boolean {
+            if (!value) {
+                return false;
+            }
+
+            for (var i = 0; i < value.length; i++) {
+                if (value[i] && this.isDataValid(value[i][0])) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private isSecondColumnHasNumber(value: any[][]): boolean {
+            if (!value) {
+                return false;
+            }
+
+            for (var i = 0; i < value.length; i++) {
+                if (value[i] && this.isDataValid(value[i][1]) && !isNaN(parseFloat(value[i][1]))) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private isFirstRowNonEmpty(value: any[][]): boolean {
+            if (!value || !value[0]) {
+                return false;
+            }
+
+            for (var i = 0; i < value[0].length; i++) {
+                if (this.isDataValid(value[0][i])) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private isDataValid(data: any) {
+            return (data !== null) && (data !== undefined) && (data.toString().trim() !== "");
+        }
+
+        //This method is for en-us culture only.
+        private getPluralString(combinedStr: string, count: number) {
+            var pluralStringArray: string[] = combinedStr.split("||");
+            if (pluralStringArray.length !== 2) {
+                throw "Error: Provided string variations do not match expected amount";
+            }
+
+            return count === 1 ? pluralStringArray[0] : pluralStringArray[1];
+        }
+    }
+}
