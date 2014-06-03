@@ -1,0 +1,75 @@
+﻿<!--
+/* **************************************************************************************
+Copyright © Microsoft Open Technologies, Inc.
+
+All Rights Reserved
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache 2 License for the specific language governing permissions and limitations under the License.
+
+***************************************************************************************** */
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Microsoft Trends</title>
+
+    <link rel="stylesheet" type="text/css" id="general-css" href="../content/en-us/office.css" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="../content/en-us/ModernTrend.css" />
+    <link rel="stylesheet" type="text/css" id="chart-theme" href="../themes/default-greenwhite.css" />
+
+    <!-- Third party scripts and code linked to or referenced here are licensed to you by the third parties that own such code, not by Microsoft, see ASP.NET Ajax CDN Terms of Use - "http://www.asp.net/ajaxlibrary/CDN.ashx". -->
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js"></script>
+
+    <!-- Third party scripts and code linked to or referenced here are licensed to you by the third parties that own such code, not by Microsoft, see ASP.NET Ajax CDN Terms of Use - "http://www.asp.net/ajaxlibrary/CDN.ashx". -->
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/jquery-ui.min.js"></script>
+
+    <!-- Third party css and code linked to or referenced here are licensed to you by the third parties that own such code, not by Microsoft, see ASP.NET Ajax CDN Terms of Use - "http://www.asp.net/ajaxlibrary/CDN.ashx". -->
+    <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/smoothness/jquery-ui.css" />
+
+    <script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js"></script>
+
+    <script src="../scripts/opensource/d3/d3.v3.min.js"></script>
+    <script src="../scripts/ModernTrend.js"></script>
+</head>
+<body id="background" class="background-style theme-background-color">
+    <div id="float-menu-parent" class="float-menu-parent-style">
+        <div id="float-menu" class="float-menu-style">
+            <div id="setting-button" class="float-menu-button setting-button" tabindex="3"></div>
+            <div id="data-button" class="float-menu-button data-button" tabindex="2"></div>
+        </div>
+    </div>
+    <div id="setting-pane" class="setting-pane-style">
+        <div id="setting-back-button" class="back-button" tabindex="1"></div>
+        <div id="setting-pane-title" class="pane-title"></div><br /><br />
+        <div id="theme-button" class="setting-tab theme-button-style" tabindex="-1"></div>
+        <div id="theme-pane" class="sub-edit-pane theme-pane-style"></div>
+    </div>
+    <div id="data-pane" class="setting-pane-style">
+        <div id="data-back-button" class="back-button" tabindex="1"></div>
+        <div id="data-pane-title" class="pane-title"></div>
+        <br />
+        <br />
+        <div id="sub-data-pane" class="sub-edit-pane sub-data-pane-style">
+            <button id="select-data" class="button button-green data-pane-button" tabindex="1"></button>
+        </div>
+    </div>
+    <div style="display:none">
+        <img src="../images/Back.svg" />
+        <img src="../images/Back_hover.svg" />
+        <img src="../images/Back_press.svg" />
+        <img src="../images/Data_hover.svg" />
+        <img src="../images/Data_press.svg" />
+        <img src="../images/Setting_hover.svg" />
+        <img src="../images/Setting_press.svg" />
+    </div>
+</body>
+</html>

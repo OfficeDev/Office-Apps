@@ -1,0 +1,38 @@
+﻿[
+    {
+        "id": "default-greenwhite",
+        "sku": "trends-default",
+        "thumbnail": "../Themes/default-greenwhite.png",
+        "css": "../Themes/default-greenwhite.css"
+    },
+	{
+        "id": "whiterose",
+        "sku": "trends-default",
+        "thumbnail": "../Themes/whiterose.png",
+        "css": "../Themes/whiterose.css"
+    },
+    {
+        "id": "blackblue",
+        "sku": "trends-default",
+        "thumbnail": "../Themes/blackblue.png",
+        "css": "../Themes/blackblue.css"
+    },
+	{
+        "id": "yellowblack",
+        "sku": "trends-default",
+        "thumbnail": "../Themes/yellowblack.png",
+        "css": "../Themes/yellowblack.css"
+    },
+	{
+        "id": "whiteblack",
+        "sku": "trends-default",
+        "thumbnail": "../Themes/whiteblack.png",
+        "css": "../Themes/whiteblack.css"
+    },
+	{
+        "id": "blackwhite",
+        "sku": "trends-default",
+        "thumbnail": "../Themes/blackwhite.png",
+        "css": "../Themes/blackwhite.css"
+    }
+]

@@ -1,0 +1,166 @@
+﻿[
+    {
+        "id": "layout-trends-default",
+        "elements":
+        [
+            {
+                "id": "first-row-container",
+                "parentId": "background",
+                "element": "div",
+                "cssClass": "row-container-style first-row-container theme-first-row-group",
+                "attributes": [],
+                "styles": [],
+                "resizable": false
+            },
+            {
+                "id": "title-parent",
+                "parentId": "first-row-container",
+                "element": "div",
+                "cssClass": "resize-style",
+                "attributes": [
+                    { "name": "tabindex", "value": "-1" }
+                ],
+                "styles": [
+                    { "name": "width", "value": "126px" },
+                    { "name": "height", "value": "249px" },
+                    { "name": "float", "value": "left" },
+                    { "name": "min-width", "value": "70px" }
+                ],
+                "resizable": true
+            },
+            {
+                "id": "title",
+                "parentId": "title-parent",
+                "element": "textarea",
+                "cssClass": "element-style theme-text chart-title",
+                "attributes": [
+                    { "name": "tabindex", "value": "1" }
+                ],
+                "resizable": false
+            },
+            {
+                "id": "line-chart",
+                "parentId": "first-row-container",
+                "element": "div",
+                "cssClass": "resize-style",
+                "attributes": [
+                    { "name": "tabindex", "value": "-1" }
+                ],
+                "styles": [
+                    { "name": "width", "value": "490px" },
+                    { "name": "height", "value": "249px" },
+                    { "name": "padding-left", "value": "20px" },
+                    { "name": "padding-right", "value": "10px" },
+                    { "name": "float", "value": "left" },
+                    { "name": "min-width", "value": "260px" }
+                ],
+                "resizable": true
+            },
+            {
+                "id": "legend",
+                "parentId": "first-row-container",
+                "element": "div",
+                "cssClass": "resize-style",
+                "attributes": [
+                    { "name": "tabindex", "value": "-1" }
+                ],
+                "styles": [
+                    { "name": "width", "value": "147px" },
+                    { "name": "height", "value": "249px" },
+                    { "name": "float", "value": "left" },
+                    { "name": "padding-left", "value": "5px" },
+                    { "name": "min-width", "value": "80px" }
+                ],
+                "resizable": false
+            },
+            {
+                "id": "second-row-container",
+                "parentId": "background",
+                "element": "div",
+                "cssClass": "row-container-style second-row-container",
+                "attributes": [],
+                "styles": [],
+                "resizable": false
+            },
+            {
+                "id": "shortdes1-group",
+                "parentId": "second-row-container",
+                "element": "div",
+                "cssClass": "resize-style theme-shortdes1-group",
+                "attributes": [
+                    { "name": "tabindex", "value": "-1" }
+                ],
+                "styles": [
+                    { "name": "width", "value": "197px" },
+                    { "name": "height", "value": "82px" },
+                    { "name": "margin-top", "value": "8px" },
+                    { "name": "padding", "value": "2px 15px 0px 10px" },
+                    { "name": "float", "value": "left" },
+                    { "name": "min-width", "value": "0px" }
+                ],
+                "resizable": true
+            },
+            {
+                "id": "shortdes1-title",
+                "parentId": "shortdes1-group",
+                "element": "textarea",
+                "cssClass": "sub-descript-style theme-text sub-descript-title",
+                "attributes": [
+                    { "name": "tabindex", "value": "1" }
+                ],
+                "resizable": false,
+                "forceOneLine": true
+            },
+            {
+                "id": "shortdes1-descript",
+                "parentId": "shortdes1-group",
+                "element": "textarea",
+                "cssClass": "sub-descript-style theme-text sub-descript",
+                "attributes": [
+                    { "name": "tabindex", "value": "1" }
+                ],
+                "resizable": false,
+                "forceOneLine": true
+            },
+            {
+                "id": "longdes-group",
+                "parentId": "second-row-container",
+                "element": "div",
+                "cssClass": "resize-style",
+                "attributes": [
+                    { "name": "tabindex", "value": "-1" }
+                ],
+                "styles": [
+                    { "name": "width", "value": "509px" },
+                    { "name": "height", "value": "82px" },
+                    { "name": "margin-top", "value": "8px" },
+                    { "name": "padding", "value": "2px 15px 0px 15px" },
+                    { "name": "float", "value": "left" },
+                    { "name": "min-width", "value": "0px" }
+                ],
+                "resizable": false
+            },
+            {
+                "id": "longdes-title",
+                "parentId": "longdes-group",
+                "element": "textarea",
+                "cssClass": "sub-descript-style layout-longdes-title theme-text",
+                "attributes": [
+                    { "name": "tabindex", "value": "1" }
+                ],
+                "resizable": false,
+                "forceOneLine": true
+            },
+            {
+                "id": "longdes-descript",
+                "parentId": "longdes-group",
+                "element": "textarea",
+                "cssClass": "sub-descript-style layout-longdes-descript theme-text",
+                "attributes": [
+                    { "name": "tabindex", "value": "1" }
+                ],
+                "resizable": false
+            }
+        ]
+    }
+]

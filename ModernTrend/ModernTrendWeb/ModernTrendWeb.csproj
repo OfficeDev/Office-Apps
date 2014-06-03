@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B293583-4983-456B-9BD0-8A93336CFCED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModernTrendWeb</RootNamespace>
+    <AssemblyName>ModernTrendWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44309</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="layouts\layouts.json" />
+    <Content Include="resources\en-us\resources.js" />
+    <Content Include="themes\themes.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\en-us\Office.css" />
+    <Content Include="content\en-us\ModernTrend.css" />
+    <Content Include="images\AppIcon.png" />
+    <Content Include="images\AppIcon96.png" />
+    <Content Include="images\Back.svg" />
+    <Content Include="images\Back_hover.svg" />
+    <Content Include="images\Back_press.svg" />
+    <Content Include="images\Data.svg" />
+    <Content Include="images\Data_hover.svg" />
+    <Content Include="images\Data_press.svg" />
+    <Content Include="images\Setting.svg" />
+    <Content Include="images\Setting_hover.svg" />
+    <Content Include="images\Setting_press.svg" />
+    <Content Include="pages\ModernTrend.html" />
+    <Content Include="scripts\opensource\d3\d3.v3.min.js" />
+    <Content Include="themes\blackblue.css" />
+    <Content Include="themes\blackblue.png" />
+    <Content Include="themes\blackwhite.css" />
+    <Content Include="themes\blackwhite.png" />
+    <Content Include="themes\check-black.svg" />
+    <Content Include="themes\check-white.svg" />
+    <Content Include="themes\default-greenwhite.css" />
+    <Content Include="themes\default-greenwhite.png" />
+    <Content Include="themes\whiteblack.css" />
+    <Content Include="themes\whiteblack.png" />
+    <Content Include="themes\whiterose.css" />
+    <Content Include="themes\whiterose.png" />
+    <Content Include="themes\yellowblack.css" />
+    <Content Include="themes\yellowblack.png" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <TypeScriptCompile Include="scripts\app.ts" />
+    <TypeScriptCompile Include="scripts\logic\configurator.agave.ts" />
+    <TypeScriptCompile Include="scripts\logic\data.binder.agave.ts" />
+    <TypeScriptCompile Include="scripts\logic\data.convertor.agave.ts" />
+    <TypeScriptCompile Include="scripts\logic\layouter.trends.ts" />
+    <TypeScriptCompile Include="scripts\logic\plotter.trends.ts" />
+    <TypeScriptCompile Include="scripts\logic\predefinedSKUs.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\chart.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\config.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\controller.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\data.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\decoration.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\layout.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\skus.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\tool.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\utils.ts" />
+    <TypeScriptCompile Include="scripts\logic\shared\validate.ts" />
+    <TypeScriptCompile Include="scripts\strings\stringadapter.ts" />
+    <TypeScriptCompile Include="scripts\UX\BindingPaneSpecific.ts" />
+    <TypeScriptCompile Include="scripts\UX\DataPane.ts" />
+    <TypeScriptCompile Include="scripts\UX\Home.ts" />
+    <TypeScriptCompile Include="scripts\UX\SettingPane.ts" />
+    <TypeScriptCompile Include="scripts\UX\shared\BindingPane.ts" />
+    <TypeScriptCompile Include="scripts\UX\shared\Galleries.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61956</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61956/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptOutFile>scripts\ModernTrend.js</TypeScriptOutFile>
+    <TypeScriptGeneratesDeclarations>true</TypeScriptGeneratesDeclarations>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <IncludeIisSettings>false</IncludeIisSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptOutFile>scripts\ModernTrend.js</TypeScriptOutFile>
+    <TypeScriptGeneratesDeclarations>true</TypeScriptGeneratesDeclarations>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>
