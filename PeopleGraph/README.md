@@ -12,7 +12,7 @@ This is a project for a real Microsoft app for Excel that can be downloaded free
 
 With a few clicks, you could show your data in a vivid way. The chart contains much more information so that it is easy for you to tell a story based on your Excel data.  
 
-__Download the [People Graph](http://office.microsoft.com/en-us/store/people-graph-WA104104476.aspx?queryid=d99ed611%2Dac57%2D4b62%2D9641%2Dce561dedf85f&css=people%20graph&CTT=1) app for Excel and have a try.__
+__Download the [People Graph](https://store.office.com/people-graph-WA104104476.aspx?assetid=WA104104476&sourcecorrid=114132e6-36c4-462b-bb10-2f3e17b69dc9&searchapppos=0) app for Excel and have a try.__
 
 ### Structure of the source code ###
 PeopleGraph/PeopleGraphManifest
