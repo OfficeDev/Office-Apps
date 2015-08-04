@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SharePointSiteUrl>http://minint-ggau64l/</SharePointSiteUrl>
+    <GeneratedFeatureId>82e24d50-f14b-4f0f-9967-7e3b2f1372cf</GeneratedFeatureId>
+    <GeneratedPackageId>ff070dfd-f17f-49fe-a253-58e2e03e9e89</GeneratedPackageId>
+    <GeneratedModuleId>{05cbb88c-b7d1-4018-ba0c-b38204ffe0d7}</GeneratedModuleId>
+    <GeneratedListId>{42a58241-19c2-47a8-acea-d64645776f68}</GeneratedListId>
+    <GeneratedProductId>{af6be877-aa1c-4f0c-ae25-efe107e1ea51}</GeneratedProductId>
+    <GeneratedAppVersion>1.0.0.0</GeneratedAppVersion>
+    <GeneratedClientSecret>hT8CusYeF11zqKy5qYd0JY4CYkDiOcoEm9IZuK4N0A4=</GeneratedClientSecret>
+  </PropertyGroup>
+</Project>
