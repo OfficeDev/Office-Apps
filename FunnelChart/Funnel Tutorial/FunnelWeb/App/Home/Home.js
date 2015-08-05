@@ -14,16 +14,41 @@
         ['On-site Interview', 45],
         ['Given Offer', 30],
         ['Accepted Offer', 12]];
+        
+    window.animationSpeed = 1000;
 
     // The initialize function must be run each time a new page is loaded
     Office.initialize = function (reason) {
         $(document).ready(function () {
             app.initialize();
+            
+            window.animationSpeed = Office.context.document.settings.get('animationSpeed') ? Office.context.document.settings.get('animationSpeed') : 1000;
 
             $('#sampleButton').click(insertSampleData);
             $('#get-data-from-selection').click(getDataFromSelection);
+            $('#animationButton').click(function () {
+                if (window.animationSpeed == 3) {
+                    window.animationSpeed = 1000;
+                    setAndSave('animationSpeed', 1000);
+                } else {
+                    window.animationSpeed = 3;
+                    setAndSave('animationSpeed', 3);
+                }
+                if (binding) {
+                    displayDataForBinding(binding);
+                }
+            })
         });
     };
+    
+    //Takes in a string of settingName and string, number, or object of settingValue
+    //Creates new corresponding setting, then saves settings to the document
+    function setAndSave(settingName, settingValue) {
+        if (Office.context.document.settings) {
+            Office.context.document.settings.set(settingName, settingValue);
+            Office.context.document.settings.saveAsync();
+        }
+    }
 
     //Creates TableData of sample data, writes it to selected cell in chart, and binds to it
     function insertSampleData() {
@@ -115,7 +140,7 @@
                 height: 250
             });
             $('#container').empty();
-            chart.draw('#container');
+            chart.draw('#container', window.animationSpeed);
         }
     }
 
