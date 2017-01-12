@@ -12,6 +12,8 @@ This project is a Microsoft app for Office used in Word 2013 and Excel 2013. It 
 The Wikipedia app will automatically search topics based on the selection in your Office document and display results in the Task Pane. Wikipedia content in the Task Pane is optimized for easy navigation and reading. Content is organized into sections, and tabs allow you to focus on text and images or just images.  
 Inserting Wikipedia content is a snap: simply select the Wikipedia content you are interested in, and with one click the app will instantly insert a quotation into your document.  
 
+	Note: This is a taskpane add-in that is launched from the ribbon. When you press F5 in Visual Studio, Word or Excel will open. On the **Home** tab of the ribbon, there will be a new group called **Wikipedia** with an **Open** button. Press **Open** to launch the add-in.
+
 __Download [Wikipedia](http://office.microsoft.com/en-us/store/wikipedia-WA104099688.aspx?queryid=b014c521%2D8618%2D4975%2D963f%2D19f5b451ced9&css=wikipedia&CTT=1) app and have a try.__
 
 ## Structure of the source code ##
