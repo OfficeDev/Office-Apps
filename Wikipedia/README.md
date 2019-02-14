@@ -1,3 +1,23 @@
+---
+topic: sample
+products:
+- Excel
+- PowerPoint
+- Word
+- Office 365
+languages:
+- TypeScript
+extensions:
+  contentType: samples
+  technologies:
+  - Add-ins
+  services:
+  - Excel
+  - Office 365
+  platforms: []
+  createdDate: 3/18/2014 3:27:46 AM
+  scenarios: []
+---
 # Wikipedia app for Microsoft Office #
 
 **Table of Contents**
