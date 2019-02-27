@@ -1,3 +1,16 @@
+---
+topic: sample
+products:
+- Excel
+- Office 365
+languages:
+- TypeScript
+extensions:
+  contentType: samples
+  technologies:
+  - Add-ins
+  createdDate: 3/18/2014 3:27:46 AM
+---
 ## Modern Trend app for Microsoft Office ##
 
 ####Table of Contents####
