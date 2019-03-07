@@ -1,3 +1,13 @@
+---
+topic: sample
+products:
+- Office 365
+languages:
+- JavaScript
+extensions:
+  contentType: samples
+  createdDate: 3/18/2014 3:27:46 AM
+---
 # Office App Source code #
 
 **Table of Contents**
