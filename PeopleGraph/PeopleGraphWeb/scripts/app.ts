@@ -59,11 +59,20 @@ module DataViz {
 
     function loadResourcesAndInitApp(resourceUrl: string, reason: string) {
         var retryCount: number = 3;
+        // Makes sure the service worker is ready before more resources are loaded
+        registerSW();
+
         $.getScript(resourceUrl, () => {
                 ensureDependancies(retryCount, () => {
                     DataViz.mainApp.init(reason);
                 });
             });
+    }
+
+    function registerSW() {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/sw.js", { scope: "/" });
+        }
     }
 
     function ensureDependancies(retryCount: number, callback: () => any) {

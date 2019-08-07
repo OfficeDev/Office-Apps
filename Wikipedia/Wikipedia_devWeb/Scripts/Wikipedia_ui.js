@@ -1350,5 +1350,9 @@ Office.initialize = function (reason) {
         // The timeout is used to wait the sandbox page is ready.
         // Consider the differnt network condition and set the timetout to 1 second.
         Client.tryUpdatingSelectedWord(true, 1000);
+
+        // Initializes service worker in browser if not already installed
+        // Caches files needed for Add-in to run offline
+        ServiceWorker.init();
     });
 };

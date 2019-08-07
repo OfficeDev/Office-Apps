@@ -20,6 +20,9 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -107,6 +110,7 @@
     <Content Include="SKUs\peoplebar-callout.png" />
     <Content Include="SKUs\peoplebar-classic.png" />
     <Content Include="SKUs\peoplebar-giant.png" />
+    <Content Include="sw.js" />
     <Content Include="themes\callout-blackgrey.css" />
     <Content Include="themes\callout-blackgrey.png" />
     <Content Include="themes\callout-blackgreyred.css" />

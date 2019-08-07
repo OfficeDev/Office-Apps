@@ -324,6 +324,7 @@ var SandboxInteraction = {
                     GlobalVars.nextState.tocReady = true;
                 }
 
+                GlobalVars.nextState.topic = decodeURIComponent(messageJson.message.redirectTitle);
                 GlobalVars.nextState.articleReady = true;
                 GlobalVars.nextState.writeToPage(true);
                 UI.showFullArticleButton();
@@ -335,7 +336,6 @@ var SandboxInteraction = {
                     GlobalVars.nextState.referenceID = messageJson.message.referenceID;
                 }
 
-                GlobalVars.nextState.topic = decodeURIComponent(messageJson.message.redirectTitle);
                 GlobalVars.nextState.toc = messageJson.message.toc;
                 GlobalVars.nextState.tocReady = true;
                 GlobalVars.nextState.type = State.TypeEnum.article;
@@ -409,6 +409,10 @@ var SandboxInteraction = {
                 UI.writeError(messageJson.message.errorMessage, ErrorType.error);
 
                 break;
+            case "pullingFromCache":
+                UI.writeError(Errors.pullingFromCache, ErrorType.error);
+
+                break;
         }
     },
 
@@ -451,5 +455,25 @@ var SandboxInteraction = {
     postReferenceMessage: function (title, sectionID) {
         var message = { "function": "updateReference", "title": title, "sectionID": sectionID };
         SandboxInteraction.sandboxPostMessage(message, true);
+    }
+}
+
+var ServiceWorker = {
+    address: "/sw.js",
+
+    // Installs service worker
+    init: function () {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register(ServiceWorker.address);
+        }
+    },
+
+    uninstall: function () {
+        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+            for (let registration of registrations) {
+                console.log(registration.scope);
+                registration.unregister();
+            }
+        })
     }
 }

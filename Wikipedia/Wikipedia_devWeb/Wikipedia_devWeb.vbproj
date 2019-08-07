@@ -21,6 +21,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -105,6 +107,7 @@
     <Content Include="Styles\App.css" />
     <Content Include="Styles\OxgAgaveStyle.css" />
     <Content Include="Styles\OxgNavigationStyle.css" />
+    <Content Include="sw.js" />
     <Content Include="Wikipedia_dev.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

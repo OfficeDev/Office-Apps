@@ -18,7 +18,8 @@ var Errors = {
     textInsertionFailureForMultiCell: "We can't insert the text into multiple cells. Please select one single cell.",
     docCodeError: "This document is in Read-Only mode. Please enable editing before insertion.",
     sandboxServiceDown: "The content doesn’t exist or is not accessible due to connectivity issues.",
-    jsonParseError: "Json parse error."
+    jsonParseError: "Json parse error.",
+    pullingFromCache: "Cannot connect to Wikipedia. Pulling data from cache."
 };
 
 var UIStrings = {

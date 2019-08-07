@@ -271,6 +271,7 @@ var WikipediaAppInteraction = {
         if (hostUrl.indexOf("localhost") != -1) {
             WikipediaAppInteraction.wikipediaHostURL = "http://localhost:22712";
         }
+
     },
 
     wikipediaPostMessage: function (message, sequenceNo) {
@@ -305,7 +306,7 @@ var WikipediaAppInteraction = {
                     // Get the introduction chapter of the article from Wikipedia
                     Wikipedia.getHTMLBySectionAsync(WikipediaAppInteraction.wikipediaSearchTitle, Wikipedia.INTRODUCTION_SECTION_ID, JSONParser.updateSectionCallback);
                     // Get the chapters(table of content) of the article from Wikipedia
-                    Wikipedia.getTableOfContentAsync(WikipediaAppInteraction.wikipediaSearchTitle, JSONParser.updateTocCallback);
+                    Wikipedia.getTableOfContentAsync(WikipediaAppInteraction.wikipediaSearchTitle, JSONParser.updateTocCallback, JSONParser.blankTocCallback);
                 }
 
                 break;
@@ -339,17 +340,22 @@ var WikipediaAppInteraction = {
         WikipediaAppInteraction.wikipediaPostMessage(message, sequenceNo);
     },
 
-    postTocMessage: function (callbackName, toc, tocLength, lastToc, referenceID, redirectTitle, sequenceNo) {
+    postSectionMessage: function (callbackName, content, redirectTitle, sequenceNo) {
+        var message = { "callback": callbackName, "content": content, "redirectTitle": redirectTitle };
+        WikipediaAppInteraction.wikipediaPostMessage(message, sequenceNo);
+    },
+
+    postTocMessage: function (callbackName, toc, tocLength, lastToc, referenceID, sequenceNo) {
         var message;
         if (referenceID !== 0) {
             message = {
                 "callback": callbackName, "toc": toc, "tocLength": tocLength,
-                "lastToc": lastToc, "referenceID": referenceID, "redirectTitle": redirectTitle
+                "lastToc": lastToc, "referenceID": referenceID
             };
         } else {
             message = {
                 "callback": callbackName, "toc": toc, "tocLength": tocLength,
-                "lastToc": lastToc, "redirectTitle": redirectTitle
+                "lastToc": lastToc
             };
         }
         WikipediaAppInteraction.wikipediaPostMessage(message, sequenceNo);
@@ -376,43 +382,66 @@ var WikipediaAppInteraction = {
     postSearchCancelMessage: function (sequenceNo) {
         var message = { "callback": "searchCancel" };
         WikipediaAppInteraction.wikipediaPostMessage(message, sequenceNo);
+    },
+
+    postfromCacheMessage: function (sequenceNo) {
+        var message = { "callback": "pullingFromCache" };
+        WikipediaAppInteraction.wikipediaPostMessage(message, sequenceNo);
     }
 }
 
 // The functions in Wikipedia are used to query article content through Wikipedia's API.
 var Wikipedia = new function () {
     this.INTRODUCTION_SECTION_ID = "0";
-    var wikiAPIEntry = "https://" + LANGUAGE + ".wikipedia.org/w/api.php?format=json&";
+    var wikiAPIEntry = "https://" + LANGUAGE + ".wikipedia.org/w/api.php?format=json&origin=*&";
     // Prefix for all images.
     this.filePrefix = "File:";
     this.categoryPrefix = "Category:";
+    this.serviceWorkerURL = "http://localhost:22712/sw.js";
+
+    // Default handler of faild queries
+    // Parameters:
+    //      xhr: query response
+    function queryErrorCallback(xhr) {
+        var sequenceNo = WikipediaAppInteraction.wikipediaSequenceNo;
+
+        if (xhr.statusText === "timeout") {
+            WikipediaAppInteraction.postErrorMessage(Errors.timeout, sequenceNo);
+        } else {
+            WikipediaAppInteraction.postErrorMessage(Errors.wikipedia, sequenceNo);
+        }
+    }
 
     // Query Wikipedia.
     // Parameters:
     //      address: query url
     //      callback: the result of the query after success
-    function makeQuery(address, callback) {
-        var sequenceNo = WikipediaAppInteraction.wikipediaSequenceNo;
-
+    //      faildCallback: the result of the query after an error, optional
+    function makeQuery(address, callback, failedCallback = queryErrorCallback) {
         if (address.length <= 0) {
             return;
         }
 
-        // Using query ajax function to query Wikipedie. Get async result to callback when query succeeds,
+        // Using Fetch API to query Wikipedia. Get async result to callback when query succeeds,
         // and get error status when query fails.
-        $.ajax({
-            url: address,
-            dataType: "jsonp",
-            timeout: 30000,
-            success: callback,
-            error: function (xhr) {
-                if (xhr.statusText === "timeout") {
-                    WikipediaAppInteraction.postErrorMessage(Errors.timeout, sequenceNo);
-                } else {
-                    WikipediaAppInteraction.postErrorMessage(Errors.wikipedia, sequenceNo);
-                }
-            }
-        });
+        fetch(address).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            callback(data);
+        }).catch(failedCallback);
+    }
+
+    this.serviceWorkerEventListener = function (event) {
+        if (event.origin !== WikipediaAppInteraction.wikipediaHostURL) {
+            return;
+        }
+
+        switch (event.data) {
+            case "pullingFromCache":
+                WikipediaAppInteraction.postfromCacheMessage(WikipediaAppInteraction.wikipediaSequenceNo);
+
+                break;
+        }
     }
 
     // Query HTML content for specific search title
@@ -428,10 +457,10 @@ var Wikipedia = new function () {
     };
 
     // Query chapters(table of content) of the article
-    this.getTableOfContentAsync = function (pageTitle, callback) {
+    this.getTableOfContentAsync = function (pageTitle, callback, failedCallback) {
         var _queryString = wikiAPIEntry + "action=mobileview&redirects&prop=sections|normalizedtitle&sectionprop=toclevel|line|index&page=";
 
-        makeQuery(_queryString + StrUtil.processURI(pageTitle), callback);
+        makeQuery(_queryString + StrUtil.processURI(pageTitle), callback, failedCallback);
     };
 
     // Query HTML content for the entire article
@@ -498,11 +527,18 @@ var JSONParser = new function () {
         } else if (json.parse && json.parse.text) {
             if (json.parse.title.toLocaleLowerCase() === WikipediaAppInteraction.wikipediaSearchTitle.toLocaleLowerCase()
                 || json.parse.redirects && json.parse.redirects[0] && json.parse.redirects[0].from.toLocaleLowerCase() === WikipediaAppInteraction.wikipediaSearchTitle.toLocaleLowerCase()) {
-                WikipediaAppInteraction.postContentMessage("updateSectionCallback", StrUtil.replaceDoubleBackSlashWithHTTPS(json.parse.text), sequenceNo);
+                WikipediaAppInteraction.postSectionMessage("updateSectionCallback", StrUtil.replaceDoubleBackSlashWithHTTPS(json.parse.text['*']), json.parse.title, sequenceNo);
             }  
         } else {
             WikipediaAppInteraction.postErrorMessage(Errors.wikipedia, sequenceNo);
         }
+    };
+
+    // This allows the page to load even if the table of contents fails
+    this.blankTocCallback = function () {
+        var sequenceNo = WikipediaAppInteraction.wikipediaSequenceNo;
+
+        WikipediaAppInteraction.postTocMessage("updateTocCallback", "", 0, UIStrings.introductionHeader, 0, sequenceNo);
     };
 
     // The result of chapters and the reference chapter ID of the article
@@ -511,7 +547,6 @@ var JSONParser = new function () {
 
         if (json.mobileview && json.mobileview.sections) {
             var content = json.mobileview.sections;
-            var redirectTitle = WikipediaAppInteraction.wikipediaSearchTitle;
             var referenceID = 0;  
             var toc = CodeSnippet.newTOCEntry({
                 toclevel: 1,
@@ -530,18 +565,12 @@ var JSONParser = new function () {
                         toc += CodeSnippet.newTOCEntry(obj);
                     }
                 }
-            }            
-
-            if (json.mobileview.redirected) {
-                redirectTitle = json.mobileview.redirected;
-            } else if (json.mobileview.normalizedtitle) {
-                redirectTitle = json.mobileview.normalizedtitle;
             }
 
             if (content.length > 1) {
-                WikipediaAppInteraction.postTocMessage("updateTocCallback", toc, content.length, content[1].line, referenceID, redirectTitle, sequenceNo);
+                WikipediaAppInteraction.postTocMessage("updateTocCallback", toc, content.length, content[1].line, referenceID, sequenceNo);
             } else {
-                WikipediaAppInteraction.postTocMessage("updateTocCallback", toc, content.length, UIStrings.introductionHeader, referenceID, redirectTitle, sequenceNo);
+                WikipediaAppInteraction.postTocMessage("updateTocCallback", toc, content.length, UIStrings.introductionHeader, referenceID, sequenceNo);
             }
         }
     };
@@ -731,4 +760,6 @@ window.onload = function () {
     WikipediaAppInteraction.initial();
 
     window.addEventListener("message", WikipediaAppInteraction.wikipediaEventListener, false);
+
+    navigator.serviceWorker.addEventListener("message", Wikipedia.serviceWorkerEventListener, false);
 };
