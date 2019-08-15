@@ -7,20 +7,16 @@ const NECESSARY_FILES = 'necessary-files-v' + CURRENT_VERSION;
 // Name of cache which stores files the user fetches while using the Add-in
 const RUNTIME = 'runtime';
 
+// Maximum number of pages to precache when storing pages from links in an article
+const MAX_PRECACHE_PAGES = 1000;
+
 // Wikipedia API urls for that match what sandbox.js sends when asking for certain elements
-
 const WAPI_URL = 'https://en.wikipedia.org/w/api.php?format=json&origin=*&';
-
 const WAPI_SECTION_URL = WAPI_URL + 'action=parse&redirects&prop=text&mobileformat=html&page=';
-
 const WAPI_TOC_URL = WAPI_URL + 'action=mobileview&redirects&prop=sections|normalizedtitle&sectionprop=toclevel|line|index&page=';
-
 const WAPI_ALL_URL = WAPI_URL + 'action=mobileview&prop=text&sections=all&redirect=yes&page=';
-
 const WAPI_REF_URL = WAPI_URL + 'action=mobileview&prop=text&redirect=yes&page=';
-
 const WAPI_LINKS_URL = WAPI_URL + 'action=parse&redirects=1&page=';
-
 const WAPI_PAGE_RX = /action=parse&redirects&prop=text&mobileformat=html&page=(.*)&section=0/;
 
 
@@ -144,14 +140,14 @@ function precacheLinks(links, pageName) {
     // Caches all the pages with the same controller so they can all be
     // stopped at once
     return caches.open(pageName).then(async (cache) => {
-        // Loops through all the article names
-        for (link of links) {
-            if (signal.aborted) {
-                return Promise.reject();
+        // Loops through the first 1000 the article names
+        for (linkNum in links) {
+            if (signal.aborted || linkNum > MAX_PRECACHE_PAGES) {
+                break;
             }
 
             // Converts page names into the link needed for it's start page
-            let requestURL = WAPI_SECTION_URL + link['*'].toLowerCase() + "&section=0";
+            let requestURL = WAPI_SECTION_URL + links[linkNum]['*'].toLowerCase() + "&section=0";
             let response = await fetch(requestURL, { signal })
                 .catch(error => Promise.reject(error));
             if (response.ok && !signal.aborted) {
