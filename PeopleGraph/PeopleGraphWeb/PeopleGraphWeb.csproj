@@ -149,6 +149,7 @@
     <Content Include="themes\giant-whiterose.png" />
     <Content Include="themes\giant-yellowblue.css" />
     <Content Include="themes\giant-yellowblue.png" />
+	<Content Include="sw.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
