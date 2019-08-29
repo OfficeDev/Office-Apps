@@ -1,12 +1,12 @@
 ---
-topic: sample
+page_type: sample
 products:
-- Excel
-- PowerPoint
-- Word
-- Office 365
+- office-excel
+- office-powerpoint
+- office-word
+- office-365
 languages:
-- TypeScript
+- typescript
 extensions:
   contentType: samples
   technologies:
