@@ -94,8 +94,8 @@ __2.    Set up for debugging and run the Wikipedia app:__
 `copy /b $(ProjectDir)\Scripts\Wikipedia_vars.js+$(ProjectDir)\Scripts\Wikipedia_utils.js+$(ProjectDir)\Scripts\Wikipedia_navigation.js+$(ProjectDir)\Scripts\Wikipedia_sandbox.js+$(ProjectDir)\Scripts\Wikipedia_tabs.js+$(ProjectDir)\Scripts\Wikipedia_ui.js $(ProjectDir)\Scripts\Wikipedia_dev.js`
 
 ## More resources
-[Run an app for Office consistently in different browsers] (http://blogs.msdn.com/b/officeapps/archive/2013/09/02/run-an-app-for-office-consistently-in-different-browsers.aspx)  
-[Use Visual Studio 2012 to debug JavaScript code outside the running project] (http://blogs.msdn.com/b/officeapps/archive/2013/08/30/use-visual-studio-2012-to-debug-javascript-code-outside-the-running-project.aspx)  
+[Run an app for Office consistently in different browsers](http://blogs.msdn.com/b/officeapps/archive/2013/09/02/run-an-app-for-office-consistently-in-different-browsers.aspx)  
+[Use Visual Studio 2012 to debug JavaScript code outside the running project](http://blogs.msdn.com/b/officeapps/archive/2013/08/30/use-visual-studio-2012-to-debug-javascript-code-outside-the-running-project.aspx)  
 [Use two-domain design for more secure communication with external content](http://blogs.msdn.com/b/officeapps/archive/2013/09/10/use-two-domain-design-for-more-secure-communication-with-external-content.aspx)  
 [Writing data from apps to Office documents](http://blogs.msdn.com/b/officeapps/archive/2013/08/28/writing-data-from-apps-to-office-documents.aspx)  
 
