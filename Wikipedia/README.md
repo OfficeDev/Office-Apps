@@ -33,7 +33,7 @@ Inserting Wikipedia content is a snap: simply select the Wikipedia content you a
 >[!NOTE]
 >This is a taskpane add-in that is launched from the ribbon. When you press F5 in Visual Studio, Word or Excel will open. On the **Home** tab of the ribbon, there will be a new group called **Wikipedia** with an **Open** button. Press **Open** to launch the add-in.
 
-__Download [Wikipedia](http://office.microsoft.com/store/wikipedia-WA104099688.aspx?queryid=b014c521%2D8618%2D4975%2D963f%2D19f5b451ced9&css=wikipedia&CTT=1) app and have a try.__
+_Download [Wikipedia](http://office.microsoft.com/store/wikipedia-WA104099688.aspx?queryid=b014c521%2D8618%2D4975%2D963f%2D19f5b451ced9&css=wikipedia&CTT=1) app and have a try._
 
 ## Structure of the source code
 
