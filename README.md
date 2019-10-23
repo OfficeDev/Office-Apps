@@ -18,7 +18,6 @@ description: "With the Office App source code project, you could learn from real
 - [Office and Sharepoint App Introduction](#office-and-sharepoint-app-introduction)
 - [Related Resource](#related-resource)
 
-
 ## Overview
 
 With the Office App source code project, you could learn from real app source codes how to develop apps for Office and apps for SharePoint. All the code examples in this projects are from published real apps in Office Store (http://office.microsoft.com/en-us/store/).  
