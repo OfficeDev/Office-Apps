@@ -13,6 +13,7 @@ extensions:
   - Add-ins
   createdDate: 3/18/2014 3:27:46 AM
 description: "This project helps you quickly access Wikipedia content from Office and simplifies the process of referencing text and images."
+urlFragment: wikipedia-app-for-microsoft-office
 ---
 
 # Wikipedia app for Microsoft Office
