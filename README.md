@@ -8,6 +8,7 @@ extensions:
   contentType: samples
   createdDate: 3/18/2014 3:27:46 AM
 description: "With the Office App source code project, you could learn from real app source codes how to develop apps for Office and apps for SharePoint."
+urlFragment: office-app-source-code
 ---
 
 # Office App Source code
